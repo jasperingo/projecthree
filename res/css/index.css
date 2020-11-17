@@ -1,0 +1,324 @@
+
+
+#index-welcome {
+	padding-bottom:10px;
+	background-color:#DC143C;
+	border:1px solid #DC143C;
+	box-shadow:0px 5px 5px #DCDCDC;
+}
+
+
+#index-welcome-note {
+	color:#DC143C;
+	font-family:pj;
+	padding:0px 10px;
+	margin:30px auto;
+	text-align:center;
+	font-size:xx-large;
+	animation:moveit 1s;
+	-webkit-animation:moveit 1s;
+	text-shadow:-1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF;
+}
+
+#index-welcome-small-note {
+	color:#FFFFFF;
+	padding:0px 20px;
+	margin:30px auto;
+	text-align:center;
+	animation:moveitt 1s;
+	-webkit-animation:moveitt 1s;
+}
+
+#index-welcome-link {
+	width:50%;
+	display:block;
+	color:#DC143C;
+	font-size:large;
+	margin:20px auto;
+	text-align:center;
+	border-radius:5px;
+	padding-top:15px;
+	padding-bottom:15px;
+	background-color:#FFFFFF;
+	border:1px solid #DC143C;
+	animation:moveit 1s;
+	-webkit-animation:moveit 1s;
+}
+
+#index-welcome-link:active {
+	color:#FFFFFF;
+	border-color:#FFFFFF;
+	background-color:#DC143C;
+}
+
+
+@keyframes moveit {
+	from { transform:translateX(-100%); }
+	to { transform:translateX(0%); }
+}
+
+@-webkit-keyframes moveit {
+	from { transform:translateX(-100%); }
+	to { transform:translateX(0%); }
+}
+
+@keyframes moveitt {
+	from { transform:translateX(100%); }
+	to { transform:translateX(0%); }
+}
+
+@-webkit-keyframes moveitt {
+	from { transform:translateX(100%); }
+	to { transform:translateX(0%); }
+}
+
+
+#index-features {
+	border:1px solid #FFFFFF;
+	background-color:#FFFFFF;
+}
+
+.index-feature {
+	width:90%;
+	margin:40px auto;
+	position:relative;
+	border-radius:5px;
+	border:1px solid #00BFFF;
+	animation:enlarge 1s;
+	-webkit-animation:enlarge 1s;
+	box-shadow:0 4px 8px 0 rgba(0, 191, 255, 0.3);
+}
+
+.index-feature > svg {
+	top:-20px;
+	width:80px;
+	height:80px;
+	fill:#00BFFF;
+	padding:10px;
+	display:block;
+	margin-left:10px;
+	border-radius:5px;
+	position:absolute;
+	border:1px solid #00BFFF;
+	background-color:#FFFFFF;
+}
+
+.index-feature > div {
+	margin-top:60px;
+	font-size:larger;
+	text-align:center;
+	padding:20px 10px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
+
+@keyframes enlarge {
+	from { transform:scale(0, 0); }
+	to { transform:scale(1, 1); }
+}
+
+@-webkit-keyframes enlarge {
+	from { transform:scale(0, 0); }
+	to { transform:scale(1, 1); }
+}
+
+
+
+#index-projects {
+	padding-top:50px;
+	padding-bottom:50px;
+	background-color:rgba(255,0,0,0.3);
+}
+
+#index-projects-head {
+	width:90%;
+	color:#FFFFFF;
+	padding:10px 0;
+	font-weight:bold;
+	margin:20px auto;
+	text-align:center;
+	font-size:x-large;
+	border-radius:50px;
+	background-color:#DC143C;
+}
+
+
+#index-universities {
+	padding-top:50px;
+	padding-bottom:50px;
+	background-color:rgba(0, 191, 255,0.3);
+}
+
+#index-universities-head {
+	width:90%;
+	color:#FFFFFF;
+	padding:10px 0;
+	font-weight:bold;
+	margin:20px auto;
+	text-align:center;
+	font-size:x-large;
+	border-radius:50px;
+	background-color:#00BFFF;
+}
+
+#index-universities-link {
+	width:150px;
+	color:#000000;
+	display:block;
+	padding:20px 0;
+	font-size:large;
+	margin:20px auto;
+	text-align:center;
+	border-radius:5px;
+	border:1px solid #00BFFF;
+	background-color:#FFFFFF;
+}
+
+#index-universities-link:active {
+	background-color:#00BFFF;
+}
+
+
+#index-abouts {
+	padding-top:50px;
+	padding-bottom:50px;
+	background-color:#FFFFFF;
+}
+
+.index-about {
+	width:80%;
+	margin:20px auto;
+	borderg:1px solid black;
+}
+
+.index-about-head {
+	font-size:larger;
+	font-weight:bold;
+	padding-bottom:5px;
+}
+
+
+#index-abouts-link {
+	width:200px;
+	color:#FFFFFF;
+	display:block;
+	padding:20px 0;
+	font-size:large;
+	margin:20px auto;
+	margin-top:40px;
+	text-align:center;
+	border-radius:5px;
+	border:1px solid #FF0000;
+	background-color:#FF0000;
+}
+
+#index-abouts-link:active {
+	color:#FF0000;
+	background-color:#FFFFFF;
+}
+
+
+
+
+@media only screen and (min-width:600px) {
+
+	.index-feature {
+		width:80%;
+	}
+
+
+}
+
+
+@media only screen and (min-width:768px) {
+
+	#index-welcome-link {
+		width:30%;
+	}
+
+
+	#index-features {
+		text-align:center;
+	}
+
+	.index-feature {
+		width:40%;
+		vertical-align:top;
+		display:inline-block;
+	}
+
+	.index-feature:nth-child(odd) {
+		margin-right:10px;
+	}
+
+	.index-feature:nth-child(even) {
+		margin-left:10px;
+	}
+
+	
+	#index-projects, 
+	#index-universities {
+		text-align:center;
+	}
+
+
+
+
+}
+
+
+
+@media only screen and (min-width:992px) {
+
+
+
+	#index-abouts {
+		text-align:center;
+	}
+
+	.index-about {
+		width:40%;
+		margin:20px auto;
+		vertical-align:top;
+		display:inline-block;
+	}
+
+
+	#index-projects-head,
+	#index-universities-head {
+		width:80%;
+	}
+
+
+
+
+}
+
+
+@media only screen and (min-width:1200px) {
+
+
+	.index-feature {
+		width:35%;
+	}
+
+	.index-feature:nth-child(odd) {
+		margin-right:40px;
+	}
+
+	.index-feature:nth-child(even) {
+		margin-left:40px;
+	}
+
+
+
+}
+
+
+
+
+
+
+
+

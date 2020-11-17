@@ -1,0 +1,138 @@
+
+
+
+#user-page-img {
+	width:100px;
+	height:100px;
+	display:block;
+	border-radius:5px;
+	margin:30px auto 20px;
+	border:1px solid #DCDCDC;
+}
+
+#user-page-name {
+	font-weight:bold;
+	font-size:larger;
+	text-align:center;
+	margin-bottom:20px;
+}
+
+#user-page-bio {
+	padding:10px;
+	margin-bottom:20px;
+	background-color:#F3F3F3;
+	bordger:1px solid red;
+}
+
+
+#user-projects-head {
+	width:90%;
+	color:#FFFFFF;
+	padding:10px 0;
+	font-weight:bold;
+	text-align:center;
+	font-size:x-large;
+	border-radius:50px;
+	margin:10px auto 20px;
+	background-color:#DC143C;
+}
+
+
+#main-section {
+	background-color:#F3F3F3;
+	border-top:1px solid transparent;
+	border-bottom:1px solid transparent;
+}
+
+#sub-section {
+	padding:1px 0;
+	background-color:#FFFFFf;
+}
+
+
+
+@media only screen and (min-width:600px) {
+
+	#user-page-bio {
+		padding:10px 30px;
+	}
+
+}
+
+
+@media only screen and (min-width:768px) {
+
+	
+	#sub-section {
+		width:40%;
+		z-index:1;
+		overflow:auto;
+		position:fixed;
+	}
+
+	#main-section {
+		width:58%;
+		margin-left:42%;
+	}
+
+	.project-box {
+		width:95%;
+		display:block;
+	}
+
+}
+
+
+
+@media only screen and (min-width:992px) {
+
+	
+	#sub-section {
+		width:35%;
+	}
+
+	#main-section {
+		width:63%;
+		margin-left:37%;
+	}
+
+
+}
+
+
+@media only screen and (min-width:1200px) {
+
+	#sub-section {
+		width:30%;
+	}
+
+	#main-section {
+		width:68%;
+		margin-left:32%;
+		text-align:center;
+	}
+	
+	.project-box {
+		width:45%;
+		text-align:left;
+		display:inline-block;
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

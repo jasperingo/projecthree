@@ -1,0 +1,218 @@
+
+
+
+#main-form {
+	width:95%;
+	padding:10px;
+	margin:10px auto;
+	background-color:#F3F3F3;
+}
+
+#message-content-input {
+	width:70%;
+	resize:none;
+	padding:5px;
+	height:100px;
+	border-radius:5px;
+	font-family:normal;
+	vertical-align:middle;
+	background-color:#FFFFFF;
+	border:1px solid #00BFFF;
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+}
+
+#message-send-btn {
+	width:30%;
+	height:100px;
+	color:#00BFFF;
+	font-size:larger;
+	border-radius:5px;
+	text-align:center;
+	vertical-align:middle;
+	background-color:#FFFFFF;
+	border:1px solid #00BFFF;
+	border-left:none;
+	border-top-left-radius:0;
+	border-bottom-left-radius:0;
+}
+
+#message-send-btn:active {
+	background-color:#DCDCDC;
+}
+
+
+#messages-box {
+	margin:20px auto;
+	borderr:1px solid blue;
+}
+
+.message-box {
+	padding:10px;
+	borderr:1px solid pink;
+}
+
+.message-box.right {
+	text-align:right;
+}
+
+.message-user-img {
+	width:50px;
+	height:50px;
+	border-radius:5px;
+	vertical-align:top;
+	display:inline-block;
+	border:1px solid #808080;
+}
+
+.message-box-body {
+	padding:5px;
+	max-width:70%;
+	min-width:40%;
+	margin-left:5px;
+	text-align:left;
+	border-radius:5px;
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	border:1px solid #808080;
+}
+
+.message-box.right > .message-box-body {
+	margin-left:auto;
+	margin-right:5px;
+	background-color:#F3F3F3;
+}
+
+.message-box.left > .message-box-body::after {
+	top:10px;
+	left:-6px;
+	content:" ";
+	margin-left:-5px;
+	position:absolute;
+	border:5px solid transparent;
+	border-right-color:#808080;
+}
+
+.message-box.right > .message-box-body::after {
+	top:10px;
+	right:-11px;
+	content:" ";
+	margin-left:-5px;
+	position:absolute;
+	border:5px solid transparent;
+	border-left-color:#808080;
+}
+
+.message-user-name {
+	font-weight:bold;
+}
+
+.message-content {
+	margin:5px auto;
+}
+
+.message-date-read > span {
+	width:50%;
+	font-size:small;
+	display:inline-block;
+}
+
+.message-date {
+	color:#DC143C;
+}
+
+.message-read {
+	color:#00BFFF;
+	text-align:right;
+}
+
+
+
+
+
+
+
+@media only screen and (min-width:600px) {
+
+	#main-form {
+		width:90%;
+	}
+
+	#message-content-input {
+		width:80%;
+	}
+
+	#message-send-btn {
+		width:20%;
+	}
+
+
+	.message-box {
+		padding:15px 30px;
+	}
+
+
+
+}
+
+
+@media only screen and (min-width:768px) {
+
+	
+	#message-content-input {
+		width:85%;
+	}
+
+	#message-send-btn {
+		width:15%;
+	}
+
+	.message-box {
+		padding:20px 40px;
+	}
+
+
+}
+
+
+
+@media only screen and (min-width:1345px) {
+
+
+	.message-box {
+		padding:20px 60px;
+	}
+
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

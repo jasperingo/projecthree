@@ -1,0 +1,141 @@
+
+
+
+.university-box {
+	width:95%;
+	margin:auto;
+	background-color:#FFFFFF;
+	border-bottom:1px solid #DCDCDC;
+}
+
+
+.university-box > svg {
+	width:20%;
+	height:70px;
+	fill:#008000;
+	padding:10px;
+	color:#000000;
+	display:inline-block;
+	borderr:1px solid black;
+}
+
+.university-box > a {
+	width:75%;
+	padding:5px;
+	color:#000000;
+	vertical-align:top;
+	display:inline-block;
+	borderr:1px solid black;
+}
+
+.university-box > a:active {
+	background-color:#DCDCDC;
+}
+
+.university-box-name {
+	font-size:larger;
+	font-weight:bold;
+}
+
+.university-box-acronym {
+	color:#808080;
+	font-size:small;
+	font-weight:bold;
+}
+
+
+
+
+
+@media only screen and (min-width:600px) {
+
+	.university-box {
+		width:90%;	
+	}
+	
+	.university-box > svg {
+		width:15%;
+	}
+
+	.university-box > a {
+		width:85%;
+	}
+
+
+}
+
+
+@media only screen and (min-width:768px) {
+
+	.university-box {
+		width:45%;
+		text-align:left;
+		display:inline-block;
+	}
+
+
+
+}
+
+
+
+@media only screen and (min-width:992px) {
+
+	
+	.university-box {
+		width:40%;
+	}
+
+
+}
+
+
+@media only screen and (min-width:1200px) {
+
+	.university-box > svg {
+		width:20%;
+		height:90px;
+	}
+
+	.university-box > a {
+		width:80%;
+	}
+	
+
+}
+
+
+
+
+
+@media only screen and (min-width:1345px) {
+
+	.university-box > svg {
+		width:15%;
+	}
+
+	.university-box > a {
+		width:85%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
