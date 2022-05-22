@@ -1,10 +1,8 @@
 <header id="main-header">
 	
-	<div id="main-header-div-1">
-		<h1>
-			<a href="index"><?= $__('ProJecT3') ?></a>
-		</h1>
-	</div>
+	<h1>
+		<a href="/"><?= $__('ProJecT3') ?></a>
+	</h1>
 	
 	<div id="main-header-div-2">
 		
@@ -12,13 +10,17 @@
 		<form id="search-form" method="GET" action="search">
 			<button id="search-hide-btn" type="button" class="search-btn">
 				<?= $icons['search_cancel'] ?>
-			</button><input 
+			</button>
+
+			<input 
+				name="q" 
 				type="text" 
 				id="search-input" 
-				name="q" 
-				placeholder="<?= $__('search_project3'); ?>" 
-				value="<?=isset($_GET['q'])?$_GET['q']:"";?>" 
-			/><button type="submit" class="search-btn">
+				placeholder="<?= $__('search_project3') ?>" 
+				value="<?= isset($_GET['q']) ? $_GET['q']: "" ?>" 
+			/>
+
+			<button type="submit" class="search-btn">
 				<?= $icons['search'] ?>
 			</button>
 		</form>
@@ -40,12 +42,12 @@
 					<?= $icons['user'] ?>
 					<span><?= $__('profile') ?></span></a>
 				</a>
-				<a href="user/notifications">
+				<a href="users/notifications">
 					<?= $icons['notification'] ?>
 					<span><?= $__('notifications') ?></span>
 					<span id="notify" style="display:<?//=$notify;?>;"></span>
 				</a>
-				<a href="user/settings/profile">
+				<a href="users/settings/profile">
 					<?= $icons['settings'] ?>
 					<span><?= $__('settings') ?></span>
 				</a>
@@ -55,7 +57,7 @@
 				</a>
 			
 				<a href="auth/login"><?= $__('log_in') ?></a>
-				<a href="user/register"><?= $__('register') ?></a>
+				<a href="users/create"><?= $__('register') ?></a>
 				
 			</nav>
 		</div>

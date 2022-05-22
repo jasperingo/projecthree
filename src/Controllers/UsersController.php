@@ -4,17 +4,26 @@ namespace Jasper\Projecthree\Controllers;
 use Slim\Views\PhpRenderer;
 use Psr\Http\Message\ResponseInterface as Response;
 
-class UsersController {
-
-  protected PhpRenderer $renderer;
+class UsersController extends BaseController {
 
   public function __construct(PhpRenderer $renderer)
   {
-    $this->renderer = $renderer;
+    parent::__construct($renderer);
   }
 
-  public function __invoke(Response $response) 
+  public function create(Response $response) 
   {
-    return $this->renderer->render($response, "index.php");
+    return $this->renderer->render($response, "user/create.php", [
+      'title' => 'register',
+      'form_error' => '',
+      'first_name' => '',
+      'last_name' => '',
+      'email' => '',
+    ]);
+  }
+
+  public function show(Response $response)
+  {
+
   }
 }

@@ -13,7 +13,7 @@ class IndexController extends BaseController {
 
   public function index(Response $response) 
   {
-    return $this->renderer->render($response, 'index.php');
+    return $this->renderer->render($response, 'index.php', ['title' => 'app_name']);
   }
 
   private function aboutLayout() {

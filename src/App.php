@@ -7,6 +7,7 @@ use Symfony\Component\Translation\Translator;
 use Symfony\Component\Translation\Loader\JsonFileLoader;
 use Jasper\Projecthree\Errors\ErrorHandler;
 use Jasper\Projecthree\Routes\IndexRoute;
+use Jasper\Projecthree\Routes\UsersRoute;
 use Psr\Container\ContainerInterface;
 
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
@@ -24,8 +25,7 @@ $containerBuilder->addDefinitions([
   },
 
   'icons' => fn() => 
-    json_decode(file_get_contents(__DIR__.'/assets/icons/icons.json'), true)
-  ,
+    json_decode(file_get_contents(__DIR__.'/assets/icons/icons.json'), true),
 
   PhpRenderer::class => fn(ContainerInterface $container, Translator $translator) => 
     new PhpRenderer(__DIR__.'/views', [
@@ -37,6 +37,8 @@ $containerBuilder->addDefinitions([
 $app = Bridge::create($containerBuilder->build());
 
 $app->group('', IndexRoute::class);
+
+$app->group('/users', UsersRoute::class);
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
