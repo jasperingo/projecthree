@@ -2,6 +2,8 @@
 <html>
   <head>
 
+    <base href="/" />
+
     <meta charset="UTF-8" />
     
     <title><?= $code ?> error | School Project Management System</title>
