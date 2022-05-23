@@ -1,5 +1,5 @@
 <header id="main-header">
-  <div id="main-header-div-1">
+  <div class="container">
     <h1>
       <a href="/"><?= $text ?></a>
     </h1>

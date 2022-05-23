@@ -21,15 +21,16 @@
     
     <?= $this->fetch('./components/sm-header.php', ['text' => "$code error"]) ?>
     
-    <main id="main-section">
-      <section>
-        <?= $message ?> 
-      </section>
+    <main>
+      <div id="main-section">
+        <section>
+          <?= $message ?> 
+        </section>
 
-      <section>
-        <?= $stack ?> 
-      </section>
-    
+        <section>
+          <?= $stack ?> 
+        </section>
+      </div>
     </main>
     
     <?= $this->fetch('./components/footer.php') ?>

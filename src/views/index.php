@@ -1,6 +1,6 @@
-<section class="main-section">
+<div class="container">
 	
-	<div id="index-welcome">
+	<section id="index-welcome">
 	
 		<div id="index-welcome-note">School projects at it's best</div>
 
@@ -11,10 +11,10 @@
 
 		<a id="index-welcome-link" href="users/create" ><?= $__('join_us'); ?></a>
 
-	</div>
+	</section>
 
 	
-	<div id="index-features">
+	<section id="index-features">
 		
 		<div class="index-feature">
 			<?= $icons['project_index'] ?>
@@ -36,7 +36,7 @@
 			<div>Browse through a wide library of projects</div>
 		</div>
 		
-	</div>
+	</section>
 	
 	
 	<?php /* if (!empty($projects)) : ?>
@@ -67,7 +67,7 @@
 	<?php endif;*/ ?>
 	
 	
-	<div id="index-abouts">
+	<section id="index-abouts">
 		
 		<div class="index-about">
 			<div class="index-about-head">About us</div>
@@ -81,6 +81,6 @@
 		
 		<a href="users/create" id="index-abouts-link"><?= $__('register') ?></a>
 		
-	</div>
+	</section>
 	
-</section>
+</div>

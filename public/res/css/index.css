@@ -1,54 +1,44 @@
 
-
 #index-welcome {
-	padding-bottom:10px;
-	background-color:#DC143C;
-	border:1px solid #DC143C;
-	box-shadow:0px 5px 5px #DCDCDC;
+	padding: 5em var(--dimen-xxl);
+	background-color: var(--color-surface);
 }
 
-
 #index-welcome-note {
-	color:#DC143C;
-	font-family:pj;
-	padding:0px 10px;
-	margin:30px auto;
-	text-align:center;
-	font-size:xx-large;
-	animation:moveit 1s;
-	-webkit-animation:moveit 1s;
-	text-shadow:-1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF;
+	font-family: pj;
+	text-align: center;
+	font-size: xx-large;
+	color: var(--color-primary);
+	animation: moveit var(--anim-duration);
+	-webkit-animation: moveit var(--anim-duration);
 }
 
 #index-welcome-small-note {
-	color:#FFFFFF;
-	padding:0px 20px;
-	margin:30px auto;
-	text-align:center;
-	animation:moveitt 1s;
-	-webkit-animation:moveitt 1s;
+	text-align: center;
+	margin: var(--dimen-xxl) auto;
+	color: var(--color-on-background);
+	animation: moveitt var(--anim-duration);
+	-webkit-animation: moveitt var(--anim-duration);
 }
 
 #index-welcome-link {
-	width:50%;
-	display:block;
-	color:#DC143C;
-	font-size:large;
-	margin:20px auto;
-	text-align:center;
-	border-radius:5px;
-	padding-top:15px;
-	padding-bottom:15px;
-	background-color:#FFFFFF;
-	border:1px solid #DC143C;
-	animation:moveit 1s;
-	-webkit-animation:moveit 1s;
+	display: block;
+	font-size: large;
+	width: fit-content;
+	text-align: center;
+	padding: var(--dimen-md);
+	margin: var(--dimen-lg) auto;
+	color: var(--color-on-primary);
+	border-radius: var(--dimen-xs);
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	animation: moveit var(--anim-duration);
+	-webkit-animation: moveit var(--anim-duration);
 }
 
-#index-welcome-link:active {
-	color:#FFFFFF;
-	border-color:#FFFFFF;
-	background-color:#DC143C;
+#index-welcome-link:active, 
+#index-welcome-link:hover {
+	background-color: var(--color-primary-variant);
 }
 
 
@@ -74,8 +64,8 @@
 
 
 #index-features {
-	border:1px solid #FFFFFF;
-	background-color:#FFFFFF;
+	border: 1px solid var(--color-surface);
+	background-color: var(--color-surface);
 }
 
 .index-feature {
@@ -83,9 +73,9 @@
 	margin:40px auto;
 	position:relative;
 	border-radius:5px;
-	border:1px solid #00BFFF;
-	animation:enlarge 1s;
-	-webkit-animation:enlarge 1s;
+	border:1px solid var(--color-secondary);
+	animation: enlarge var(--anim-duration);
+	-webkit-animation:enlarge var(--anim-duration);
 	box-shadow:0 4px 8px 0 rgba(0, 191, 255, 0.3);
 }
 
@@ -93,14 +83,14 @@
 	top:-20px;
 	width:80px;
 	height:80px;
-	fill:#00BFFF;
 	padding:10px;
 	display:block;
 	margin-left:10px;
 	border-radius:5px;
 	position:absolute;
-	border:1px solid #00BFFF;
-	background-color:#FFFFFF;
+	fill: var(--color-secondary);
+	border: 1px solid var(--color-secondary);;
+	background-color: var(--color-on-secondary);;
 }
 
 .index-feature > div {
@@ -145,9 +135,9 @@
 
 
 #index-universities {
-	padding-top:50px;
-	padding-bottom:50px;
-	background-color:rgba(0, 191, 255,0.3);
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: rgba(0, 191, 255,0.3);
 }
 
 #index-universities-head {
@@ -159,7 +149,7 @@
 	text-align:center;
 	font-size:x-large;
 	border-radius:50px;
-	background-color:#00BFFF;
+	background-color: var(--color-secondary);
 }
 
 #index-universities-link {
@@ -171,154 +161,55 @@
 	margin:20px auto;
 	text-align:center;
 	border-radius:5px;
-	border:1px solid #00BFFF;
-	background-color:#FFFFFF;
+	border:1px solid var(--color-secondary);
+	background-color: var(--color-on-secondary);
 }
 
 #index-universities-link:active {
-	background-color:#00BFFF;
+	background-color: var(--color-secondary);
 }
 
 
 #index-abouts {
-	padding-top:50px;
-	padding-bottom:50px;
+	padding-top: 3.25em;
+	padding-bottom: 3.25em;
 	background-color:#FFFFFF;
 }
 
 .index-about {
-	width:80%;
-	margin:20px auto;
-	borderg:1px solid black;
+	width: 80%;
+	margin: var(--dimen-sm) auto;
 }
 
 .index-about-head {
-	font-size:larger;
-	font-weight:bold;
-	padding-bottom:5px;
+	font-size: larger;
+	font-weight: bold;
+	padding-bottom: 5px;
 }
 
-
 #index-abouts-link {
-	width:200px;
-	color:#FFFFFF;
-	display:block;
-	padding:20px 0;
-	font-size:large;
-	margin:20px auto;
-	margin-top:40px;
-	text-align:center;
-	border-radius:5px;
-	border:1px solid #FF0000;
-	background-color:#FF0000;
+	display: block;
+	font-size: large;
+	text-align: center;
+	width: fit-content;
+	padding: var(--dimen-md);
+	margin: var(--dimen-sm) auto;
+	border-radius: var(--dimen-xs);
+	color: var(--color-on-primary);
+	border: 1px solid var(--color-primary);
+	background-color: var(--color-primary);
 }
 
 #index-abouts-link:active {
-	color:#FF0000;
-	background-color:#FFFFFF;
+	color: var(--color-primary);
+	background-color: var(--color-on-primary);
 }
 
 
+@media only screen and (min-width:600px) {}
 
+@media only screen and (min-width:768px) {}
 
-@media only screen and (min-width:600px) {
+@media only screen and (min-width:992px) {}
 
-	.index-feature {
-		width:80%;
-	}
-
-
-}
-
-
-@media only screen and (min-width:768px) {
-
-	#index-welcome-link {
-		width:30%;
-	}
-
-
-	#index-features {
-		text-align:center;
-	}
-
-	.index-feature {
-		width:40%;
-		vertical-align:top;
-		display:inline-block;
-	}
-
-	.index-feature:nth-child(odd) {
-		margin-right:10px;
-	}
-
-	.index-feature:nth-child(even) {
-		margin-left:10px;
-	}
-
-	
-	#index-projects, 
-	#index-universities {
-		text-align:center;
-	}
-
-
-
-
-}
-
-
-
-@media only screen and (min-width:992px) {
-
-
-
-	#index-abouts {
-		text-align:center;
-	}
-
-	.index-about {
-		width:40%;
-		margin:20px auto;
-		vertical-align:top;
-		display:inline-block;
-	}
-
-
-	#index-projects-head,
-	#index-universities-head {
-		width:80%;
-	}
-
-
-
-
-}
-
-
-@media only screen and (min-width:1200px) {
-
-
-	.index-feature {
-		width:35%;
-	}
-
-	.index-feature:nth-child(odd) {
-		margin-right:40px;
-	}
-
-	.index-feature:nth-child(even) {
-		margin-left:40px;
-	}
-
-
-
-}
-
-
-
-
-
-
-
-
+@media only screen and (min-width:1200px) {}
