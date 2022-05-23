@@ -1,6 +1,6 @@
 <?php $titles = $__('title_arr'); ?>
 
-<section class="main-section">
+<div class="container">
 	
 	<form id="main-form" method="POST" action="" novalidate="novalidate">
 		
@@ -62,4 +62,4 @@
 		
 	</form>
 	
-</section>
+</div>

@@ -16,6 +16,11 @@ class IndexController extends BaseController {
     return $this->renderer->render($response, 'index.php', ['title' => 'app_name']);
   }
 
+  public function menu(Response $response) 
+  {
+    return $this->renderer->render($response, 'menu.php', ['title' => 'Menu']);
+  }
+
   private function aboutLayout() {
     $this->renderer->setLayout('about/layout.php');
   }

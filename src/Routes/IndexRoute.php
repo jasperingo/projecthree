@@ -9,6 +9,7 @@ class IndexRoute {
   public function __invoke(RouteCollectorProxy $route)
   {
     $route->get('/', [IndexController::class, 'index']);
+    $route->get('/menu', [IndexController::class, 'menu']);
     $route->get('/about', [IndexController::class, 'about']);
     $route->get('/faq', [IndexController::class, 'faq']);
     $route->get('/terms', [IndexController::class, 'terms']);

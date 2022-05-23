@@ -2,6 +2,7 @@
 	
 	"app_name": "ProJecT3",
 
+	"Menu" : "Menu", 
 	"log_in" : "Log in", 
 	"register" : "Register", 
 	"log_out" : "Log out", 
@@ -52,6 +53,7 @@
 	
 	"project" : "Project",
 	"projects" : "Projects",
+	"create_project" : "Create project",
 	"no_project" : "No project",
 	"top_projects" : "Top projects",
 	"university" : "University",

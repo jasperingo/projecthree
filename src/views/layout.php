@@ -8,6 +8,7 @@
 		<title><?= $__($title) ?> <?= $__('website_title_note') ?></title>
 		
 		<link rel="stylesheet" type="text/css" href="res/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="res/css/menu.css" />
 		<link rel="stylesheet" type="text/css" href="res/css/index.css" />
 		<link rel="stylesheet" type="text/css" href="res/css/project.css" />
 		<link rel="stylesheet" type="text/css" href="res/css/university.css" />
