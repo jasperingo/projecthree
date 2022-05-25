@@ -1,8 +1,5 @@
 <?php
 
-use ApexPHP\Valid, ApexPHP\ApexDB as DB;
-
-
 class Project {
 	
 	

@@ -1,6 +1,5 @@
 <?php
-
-
+namespace Jasper\Projecthree\Models;
 
 class Department {
 	
@@ -49,11 +48,4 @@ class Department {
 		return $added;
 	}
 	
-	
-	
 }
-
-
-
-
-

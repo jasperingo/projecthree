@@ -9,5 +9,6 @@ class UsersRoute {
   public function __invoke(RouteCollectorProxy $route)
   {
     $route->get('/create', [UsersController::class, 'create']);
+    $route->post('/create', [UsersController::class, 'store']);
   }
 }
