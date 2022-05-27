@@ -1,14 +1,15 @@
 <?php
 namespace Jasper\Projecthree\Models;
 
+use DateTime;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping\GeneratedValue;
-use DateTime;
+use Jasper\Projecthree\Repositories\UserRepository;
 
-#[Entity, Table(name: 'users')]
+#[Entity(repositoryClass: UserRepository::class), Table(name: 'users')]
 class User {
 	
 	#[

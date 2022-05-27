@@ -294,11 +294,11 @@ main {
 	display:inline-block;
 }
 
-.input-error-span {
-	color:red;
-	display:block;
-	font-size:small;
-	margin:0 5px 5px 5px;
+.input-error {
+	color: red;
+	display: block;
+	font-size: small;
+	margin-top: var(--dimen-xxs);
 }
 
 .input-box, 

@@ -2,37 +2,37 @@
 	
 	<form id="main-form" method="POST" action="" novalidate="novalidate">
 		
-		<?= $form_error; ?>
+		<?= $form_error ?>
 		
 		<div class="input-box">
 			<span class="input-span"><?= $__('first_name') ?></span>
-			<input class="main-input" type="text" name="first_name" value="<?= $first_name; ?>" />
-			<?//= $first_name_error ?>
+			<input class="main-input" type="text" name="first_name" value="<?= $first_name ?>" />
+			<div class="input-error"><?= $__($first_name_error) ?></div>
 		</div>
 
 		<div class="input-box">
 			<span class="input-span"><?= $__('last_name') ?></span>
-			<input class="main-input" type="text" name="last_name" value="<?= $last_name; ?>" />
-			<?//= $last_name_error; ?>
+			<input class="main-input" type="text" name="last_name" value="<?= $last_name ?>" />
+			<div class="input-error"><?= $__($last_name_error) ?></div>
 		</div>
 		
 		<div class="input-box">
 			<span class="input-span"><?= $__('email') ?></span>
-			<input class="main-input" type="email" name="email" value="<?= $email; ?>" />
-			<?//= $email_error; ?>
+			<input class="main-input" type="email" name="email" value="<?= $email ?>" />
+			<div class="input-error"><?= $__($email_error) ?></div>
 		</div>
 		
 		<div class="input-box">
 			<span class="input-span"><?= $__('password') ?></span>
 			<input class="main-input" type="password" name="password" />
-			<?//= $password1_error; ?>
+			<div class="input-error"><?= $__($password_error) ?></div>
 			<div class="input-span-2"><?= $__('password_recommendation_note') ?>.</div>
 		</div>
 		
 		<div class="input-box">
 			<span class="input-span"><?= $__('confirm_password') ?></span>
-			<input class="main-input" type="password" name="confirm_password" />
-			<?//= $password2_error; ?>
+			<input class="main-input" type="password" name="password_confirmation" />
+			<div class="input-error"><?= $__($password_confirmation_error) ?></div>
 		</div>
 		
 		<div class="main-form-note">

@@ -5,11 +5,8 @@ use Slim\Views\PhpRenderer;
 
 class BaseController {
 
-  protected PhpRenderer $renderer;
-
-  public function __construct(PhpRenderer $renderer)
+  public function __construct(protected PhpRenderer $renderer)
   {
-    $this->renderer = $renderer;
     $this->renderer->setLayout('layout.php');
   }
 
