@@ -26,10 +26,6 @@
         <section>
           <?= $message ?> 
         </section>
-
-        <section>
-          <?= $stack ?> 
-        </section>
       </div>
     </main>
     

@@ -9,10 +9,15 @@ use Laminas\Validator\NotEmpty;
 use Aura\Session\Segment;
 use Laminas\Validator\EmailAddress;
 use Laminas\Validator\Identical;
+use Doctrine\ORM\EntityManager;
+use Jasper\Projecthree\Validators\EmailUniqueValidator;
 
 class UserCreateValidatorMiddleware {
 
-  public function __construct(private Segment $session) {}
+  public function __construct(
+    private Segment $session, 
+    private EntityManager $entityManager
+  ) {}
 
   public function __invoke(Request $request, RequestHandler $handler) 
   {
@@ -44,8 +49,13 @@ class UserCreateValidatorMiddleware {
 
     $email = new ValidatorChain;
     $email->attach($notEmpty, true);
-    $email->attach((new EmailAddress)->setMessage('error_Email_invalid'));
-
+    $email->attach((new EmailAddress)->setMessage('error_Email_invalid'), true);
+    $email->attach(
+      (new EmailUniqueValidator)
+        ->setEntityManager($this->entityManager)
+        ->setMessage('error_Email_exists')
+    );
+    
     if (!$email->isValid($data['email'])) {
       $error = true;
       foreach ($email->getMessages() as $message) {

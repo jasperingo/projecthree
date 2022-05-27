@@ -37,6 +37,7 @@
 	
 	"Field_is_required" : "This field is required", 
 	"error_Email_invalid" : "Enter a valid email address", 
+	"error_Email_exists" : "This email address already exists", 
 	"first_name_empty_input_error" : "Enter your first name", 
 	"last_name_empty_input_error" : "Enter your last name", 
 	"email_empty_input_error" : "Enter your email address", 

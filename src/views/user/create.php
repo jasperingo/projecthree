@@ -42,7 +42,7 @@
 		
 		<div class="main-form-note">
 			<?= $__('by_registering_you_agree_to_our') ?> 
-			<a href="about/terms"><?= strtolower($__('terms_and_policy')) ?></a>.
+			<a href="terms"><?= strtolower($__('terms_and_policy')) ?></a>.
 		</div>
 		
 		<button type="submit" id="main-form-btn" name="register"><?= $__('register') ?></button>

@@ -1,17 +1,18 @@
 <?php
 namespace Jasper\Projecthree\Controllers;
 
+use DateTime;
 use Slim\Views\PhpRenderer;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Aura\Session\Segment as SessionSegment;
 use Doctrine\ORM\EntityManager;
 use Jasper\Projecthree\Models\User;
-use DateTime;
+use Slim\Exception\HttpNotFoundException;
 
 class UsersController extends BaseController {
 
-  public function __construct(private EntityManager $em, PhpRenderer $renderer)
+  public function __construct(private EntityManager $entityManager, PhpRenderer $renderer)
   {
     parent::__construct($renderer);
   }
@@ -32,7 +33,7 @@ class UsersController extends BaseController {
     ]);
   }
 
-  public function store(Request $request, Response $response, EntityManager $em)
+  public function store(Request $request, Response $response)
   {
     $data = $request->getParsedBody();
 
@@ -43,10 +44,22 @@ class UsersController extends BaseController {
     $user->password = $data['password'];
     $user->createdAt = new DateTime;
 
-    $em->getRepository(User::class)->save($user);
+    $this->entityManager->getRepository(User::class)->save($user);
     
+    return $response
+      ->withHeader('Location', "/users/{$user->id}")
+      ->withStatus(302);
+  }
+
+  public function read(Request $request, Response $response, int $id) {
+    $user = $this->entityManager->getRepository(User::class)->find($id);
+
+    if ($user === null) {
+      throw new HttpNotFoundException($request);
+    }
+
     return $this->renderer->render($response, "user/user.php", [
-      'title' => $user->firstName, 
+      'title' => ((object) $user)->firstName, 
       'data' => $user
     ]);
   }

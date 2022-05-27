@@ -11,4 +11,9 @@ class UserRepository extends EntityRepository {
     $this->getEntityManager()->flush();
   }
 
+  public function existsByEmail(string $email) {
+    $user = $this->findOneBy(['email' => $email]);
+    return $user !== null;
+  }
+
 }
