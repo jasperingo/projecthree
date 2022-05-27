@@ -10,6 +10,7 @@
 	--color-on-primary: #FFFFFF;
 	--color-on-secondary: #FFFFFF;
 
+	--dimen-huge: 3.125em;
 	--dimen-xxl: 1.75em;
 	--dimen-xl: 1.5em;
 	--dimen-lg: 1.25em;
@@ -66,7 +67,7 @@ input, select, textarea, button {
 }
 
 main {
-	padding-top: 5em;
+	padding-top: 4.75em;
 	padding-bottom: 12em;
 }
 
@@ -84,6 +85,7 @@ main {
 	position: fixed;
 	color: var(--color-primary);
 	background-color: var(--color-surface);
+	border-bottom: 1px solid black;
 }
 
 #main-header > div {
@@ -247,21 +249,26 @@ main {
 }
 
 #main-form-btn {
-	width:50%;
-	height:50px;
-	display:block;
-	color:#FFFFFF;
-	margin:20px auto;
-	border-radius:5px;
-	background-color:#DC143C;
-	border:1px solid #DC143C;
+	width: 50%;
+	height: 3.125em;
+	display: block;
+	margin: var(--dimen-lg) auto;
+	border-radius: var(--dimen-sm);
+	color: var(--color-on-primary);
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
 }
 
+#main-form-btn:hover,
 #main-form-btn:active {
-	color:#DC143C;
-	background-color:#FFFFFF;
+	background-color: var(--color-primary-variant);
 }
 
+#main-form-error {
+	width: 95%;
+	color: red;
+	margin: var(--dimen-xxs) auto;
+}
 
 .main-form-note {
 	margin:10px auto;
@@ -303,24 +310,24 @@ main {
 
 .input-box, 
 div.input-box {
-	width:95%;
-	margin:auto;
-	display:block;
-	margin-top:5px;
-	margin-bottom:10px;
+	width: 95%;
+	margin: auto;
+	display: block;
+	margin-top: var(--dimen-xxs);
+	margin-bottom: var(--dimen-sm);
 }
 
 .main-input {
-	width:100%;
-	height:40px;
-	margin:auto;
-	padding:5px;
-	border:none;
-	color:#000000;
-	display:block;
-	border-radius:5px;
-	background-color:#F5F5F5;
-	border-bottom:1px solid #DC143C;
+	width: 100%;
+	margin: auto;
+	border: none;
+	height: 2.5em;
+	display: block;
+	padding: var(--dimen-xxs);
+	color: var(--color-on-surface);
+	border-radius: var(--dimen-xs);
+	background-color: var(--color-background);
+	border-bottom: 1px solid var(--color-primary);
 }
 
 .main-button {
@@ -366,7 +373,7 @@ div.input-box {
 .main-input:focus,
 .main-select:focus, 
 .main-textarea:focus {
-	border-width:2px;
+	border-width: 2px;
 }
 
 
@@ -451,6 +458,28 @@ div.input-box {
 	background-color:#DCDCDC;
 }
 
+#logout-section {
+	width: 80%;
+	font-size: larger;
+	text-align: center;
+	margin: var(--dimen-huge) auto;
+	border-radius: var(--dimen-xs);
+	border: 1px solid var(--color-background); 
+	padding: 0 var(--dimen-sm) var(--dimen-lg);
+}
+
+#logout-section form > div {
+	display: flex;
+	justify-content: center;
+}
+
+#logout-section form > div a,
+#logout-section form > div button {
+	flex-grow: 1;
+	border: none;
+	color: var(--color-primary);
+	background-color: var(--color-surface);
+}
 
 .no-data-box {
 	width:90%;

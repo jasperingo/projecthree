@@ -11,7 +11,7 @@
 					name="q" 
 					type="text" 
 					placeholder="<?= $__('search_project3') ?>" 
-					value="<?= isset($_GET['q']) ? $_GET['q']: "" ?>" 
+					value="<?= $_GET['q'] ?? '' ?>" 
 				/>
 
 				<button type="submit" class="search-btn">
@@ -35,6 +35,18 @@
 					<a href="menu"><?= $__('Menu') ?></a>
 				</li>
 
+				<?php if ($user !== null) : ?>
+
+				<li class="header-lg-btn">
+					<a href="users/<?= $user->id ?>"><?= $__('profile') ?></a>
+				</li>
+
+				<li class="header-lg-btn">
+					<a href="project/create"><?= $__('create_project') ?></a>
+				</li>
+
+				<?php else: ?>
+
 				<li class="header-lg-btn">
 					<a href="auth/login"><?= $__('log_in') ?></a>
 				</li>
@@ -42,6 +54,9 @@
 				<li class="header-lg-btn">
 					<a href="users/create"><?= $__('register') ?></a>
 				</li>
+
+				<?php endif ?>
+
 			</ul>
 			
 		</nav>

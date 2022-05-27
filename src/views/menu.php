@@ -2,10 +2,19 @@
   
   <ul class="menu">
     
+    <?php if ($user !== null) : ?>
+    
     <li>
-      <a href="users">
+      <a href="users/<?= $user->id ?>">
         <?= $icons['user'] ?>
         <div><?= $__('profile') ?></div></a>
+      </a>
+    </li>
+
+    <li>
+      <a href="users/<?= $user->id ?>/update">
+        <?= $icons['settings'] ?>
+        <div><?= $__('Edit_profile') ?></div></a>
       </a>
     </li>
 
@@ -17,38 +26,29 @@
     </li>
 
     <li>
-      <a href="users/notifications">
-        <?= $icons['notification'] ?>
-        <div><?= $__('notifications') ?></div>
-        <span class="menu-badge"></span>
-      </a>
-    </li>
-
-    <li>
-      <a href="users/settings/profile">
-        <?= $icons['settings'] ?>
-        <div><?= $__('settings') ?></div>
-      </a>
-    </li>
-
-    <li>
       <a href="auth/logout">
         <?= $icons['log_out'] ?>
         <div><?= $__('log_out') ?></div>
       </a>
     </li>
+
+    <?php else : ?>
   
     <li>
-      <ul class="sub-menu">
-        <li>
-          <a href="auth/login"><?= $__('log_in') ?></a>
-        </li>
-
-        <li>
-          <a href="users/create"><?= $__('register') ?></a>
-        </li>
-      </ul>
+      <a href="auth/login">
+        <?= $icons['user'] ?>
+        <div><?= $__('log_in') ?></div></a>
+      </a>
     </li>
+
+    <li>
+      <a href="users/create">
+        <?= $icons['user'] ?>
+        <div><?= $__('register') ?></div></a>
+      </a>
+    </li>
+
+    <?php endif ?>
     
   </ul>
 

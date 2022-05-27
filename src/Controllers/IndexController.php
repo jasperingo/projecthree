@@ -1,15 +1,9 @@
 <?php
 namespace Jasper\Projecthree\Controllers;
 
-use Slim\Views\PhpRenderer;
 use Psr\Http\Message\ResponseInterface as Response;
 
 class IndexController extends BaseController {
-
-  public function __construct(PhpRenderer $renderer)
-  {
-    parent::__construct($renderer);
-  }
 
   public function index(Response $response) 
   {

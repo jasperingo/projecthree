@@ -1,10 +1,8 @@
 <?php
 
-
 include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'class'.DIRECTORY_SEPARATOR.'config.php';
 
-
-function autoload ($classname) {
+function autoload($classname) {
 	
     $filename = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'class'.DIRECTORY_SEPARATOR.str_replace('\\', DIRECTORY_SEPARATOR, $classname).'.php';
     //echo $filename;
@@ -14,7 +12,3 @@ function autoload ($classname) {
 }
 
 spl_autoload_register('autoload');
-   
-
-
-

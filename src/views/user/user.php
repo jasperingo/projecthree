@@ -3,7 +3,7 @@
 		
 		<div id="user-page-img"><?= $icons['user'] ?></div>
 
-		<div id="user-page-name"><?= "{$data->id} {$data->firstName} {$data->lastName}" ?></div>
+		<div id="user-page-name"><?= "{$data->firstName} {$data->lastName}" ?></div>
 		
 	</section>
 

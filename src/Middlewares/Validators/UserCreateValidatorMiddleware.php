@@ -4,12 +4,13 @@ namespace Jasper\Projecthree\Middlewares\Validators;
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Slim\Psr7\Response;
+use Aura\Session\Segment;
+use Doctrine\ORM\EntityManager;
 use Laminas\Validator\ValidatorChain;
 use Laminas\Validator\NotEmpty;
-use Aura\Session\Segment;
 use Laminas\Validator\EmailAddress;
 use Laminas\Validator\Identical;
-use Doctrine\ORM\EntityManager;
+use Laminas\Validator\StringLength;
 use Jasper\Projecthree\Validators\EmailUniqueValidator;
 
 class UserCreateValidatorMiddleware {
@@ -65,7 +66,15 @@ class UserCreateValidatorMiddleware {
 
     $password = new ValidatorChain;
     $password->attach($notEmpty, true);
-    $password->attach((new Identical($data['password_confirmation']))->setMessage('error_Password_unmatch'));
+    $password->attach(
+      (new StringLength(['min' => 5, 'max' => 15]))
+        ->setMessage('error_Password_short', StringLength::TOO_SHORT)
+        ->setMessage('error_Password_long', StringLength::TOO_LONG), 
+      true
+    );
+    $password->attach(
+      (new Identical($data['password_confirmation']))->setMessage('error_Password_unmatch')
+    );
 
     if (!$password->isValid($data['password'])) {
       $error = true;
@@ -78,6 +87,7 @@ class UserCreateValidatorMiddleware {
       $this->session->setFlash('first_name', $data['first_name']);
       $this->session->setFlash('last_name', $data['last_name']);
       $this->session->setFlash('email', $data['email']);
+      
       return (new Response)
         ->withHeader('Location', '/users/create')
         ->withStatus(302);

@@ -33,4 +33,8 @@ class User {
 	
 	#[Column(type: 'datetime', name: 'created_at')]
 	public DateTime $createdAt;
+
+	public function getFullName() {
+		return "{$this->firstName} {$this->lastName}";
+	}
 }
