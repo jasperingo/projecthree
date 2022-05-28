@@ -205,33 +205,39 @@ main {
 
 
 #main-footer {
-	bottom:0;
-	width:100%;
-	position:absolute;
-	text-align:center;
-	border-top:1px solid #FFFFFF;
-	background-image:linear-gradient(to bottom right, #00BFFF, #FF0000);
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	border-top: 1px solid #FFFFFF;
+	background-image: linear-gradient(to bottom right, var(--color-secondary), var(--color-primary));
 }
 
-#main-footer-links {
-	padding:20px 0px;
+#main-footer ul {
+	margin: 0;
+	display: flex;
+	list-style: none;
+	gap: var(--dimen-xxs);
+	justify-content: center;
+	padding: var(--dimen-lg) 0;
 }
 
-#main-footer-links > a {
-	margin:5px;
-	padding:5px;
-	color:#FFFFFF;
-	display:inline-block;
-	border-bottom:1px solid #FFFFFF;
+#main-footer a {
+	display: inline-block;
+	margin: var(--dimen-xxs);
+	padding: var(--dimen-xxs);
+	color: var(--color-on-primary);
+	border-bottom: 1px solid var(--color-on-primary);
 }
 
-#main-footer-links > a:active {
-	border:1px solid #FFFFFF;
+#main-footer a:hover,
+#main-footer a:active {
+	border: 1px solid var(--color-on-primary);
 }
 
 #main-footer-footer {
-	padding:20px 0px;
-	font-weight:bold;
+	font-weight: bold;
+	padding: var(--dimen-lg) 0;
 }
 
 
@@ -264,9 +270,20 @@ main {
 	background-color: var(--color-primary-variant);
 }
 
+#main-form > h2 {
+	width: 95%;
+	margin: var(--dimen-xxs) auto;
+}
+
 #main-form-error {
 	width: 95%;
 	color: red;
+	margin: var(--dimen-xxs) auto;
+}
+
+#main-form-success {
+	width: 95%;
+	color: rgb(46, 201, 46);
 	margin: var(--dimen-xxs) auto;
 }
 
@@ -323,9 +340,9 @@ div.input-box {
 	border: none;
 	height: 2.5em;
 	display: block;
-	padding: var(--dimen-xxs);
 	color: var(--color-on-surface);
 	border-radius: var(--dimen-xs);
+	padding: var(--dimen-xxs) var(--dimen-sm);
 	background-color: var(--color-background);
 	border-bottom: 1px solid var(--color-primary);
 }

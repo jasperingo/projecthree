@@ -2,7 +2,7 @@
 	
 	<form id="main-form" method="POST" action="" novalidate="novalidate">
 		
-		<?= $form_error ?>
+		<div id="main-form-error"><?= $form_error ?></div>
 		
 		<div class="input-box">
 			<span class="input-span"><?= $__('first_name') ?></span>
@@ -32,7 +32,6 @@
 		<div class="input-box">
 			<span class="input-span"><?= $__('confirm_password') ?></span>
 			<input class="main-input" type="password" name="password_confirmation" />
-			<div class="input-error"><?= $__($password_confirmation_error) ?></div>
 		</div>
 		
 		<div class="main-form-note">

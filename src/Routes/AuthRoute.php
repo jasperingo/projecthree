@@ -15,8 +15,8 @@ class AuthRoute {
       ->add(GuestMiddleware::class);
 
     $route->post('/login', [AuthController::class, 'create'])
-      ->add(GuestMiddleware::class)
-      ->add(LoginValidatorMiddleware::class);
+      ->add(LoginValidatorMiddleware::class)
+      ->add(GuestMiddleware::class);
 
     $route->get('/logout', [AuthController::class, 'logout'])
       ->add(AuthMiddleware::class);

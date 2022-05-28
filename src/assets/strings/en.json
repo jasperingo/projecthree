@@ -43,9 +43,8 @@
 	"error_Password_short" : "This password is too short", 
 	"error_Password_long" : "This password is too long", 
 	"error_Password_unmatch" : "Passwords do not match", 
-	"password_incorrect_input_error" : "Password is not correct", 
+	"error_Password_incorrect" : "Password is incorrect", 
 	"Incorrect_email_or_password": "Incorrect email or password",
-	
 	
 	"project" : "Project",
 	"projects" : "Projects",
@@ -88,11 +87,9 @@
 	"review_this_project" : "Review this project",
 	"review_input_error" : "Select a star and enter your message",
 	
-	
 	"name" : "Name",
 	"acronym" : "Acronym",
 	"address" : "Address",
-	
 	
 	"search" : "Search", 
 	"search_project3" : "Search Project3", 
@@ -109,21 +106,12 @@
 	"already_have_an_account" : "Already have an account",
 	"dont_have_an_account" : "Don't have an account",
 	"by_registering_you_agree_to_our" : "By registering you agree to our",
-	"request_recover_password_note" : "Enter the email of your account to recover your password",
-	"recover_password_code_note" : "Enter the code sent to you via email to recover your password",
-	"recover_password_code_invalid_input_error" : "This code is invalid",
-	"recover_password_code_expired_input_error" : "This code has expired",
-	"recover_password_success" : "Your password has been recovered",
 	
 	"edit_profile" : "Edit profile",
-	"change_photo" : "Change photo",
-	"change_email" : "Change email",
-	"change_password" : "Change password",
-	
-	"messages" : "Messages",
-	"no_message" : "No message",
-	"enter_your_message" : "Enter your message",
-	"message_empty_input_error" : "Enter the message to send", 
+	"Profile_update" : "Profile update",
+	"Profile_updated" : "Profile updated",
+	"Password_update" : "Password update",
+	"Password_updated" : "Password updated",
 	
 	
 	"in" : "in",
