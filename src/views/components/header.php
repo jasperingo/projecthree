@@ -35,6 +35,10 @@
 					<a href="menu"><?= $__('Menu') ?></a>
 				</li>
 
+				<li class="header-lg-btn">
+					<a href="departments/"><?= $__('Departments') ?></a>
+				</li>
+
 				<?php if ($user !== null) : ?>
 
 				<li class="header-lg-btn">

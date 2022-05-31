@@ -12,7 +12,8 @@
 		<link rel="stylesheet" type="text/css" href="res/css/index.css" />
 		<link rel="stylesheet" type="text/css" href="res/css/project.css" />
 		<link rel="stylesheet"  type="text/css" href="res/css/userpage.css">
-		
+		<link rel="stylesheet" type="text/css" href="res/css/universitiespage.css">
+
 		<meta name="viewport"  content="width=device-width, initial-scale=1.0" />
 		
 		<link rel="shortcut icon" href="res/images/favicon.png" type="image/png" />

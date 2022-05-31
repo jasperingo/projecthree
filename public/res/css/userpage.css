@@ -43,69 +43,13 @@
 	border-bottom:1px solid transparent;
 }
 
-
-@media only screen and (min-width:600px) {
-
-	#user-page-bio {
-		padding:10px 30px;
-	}
-}
-
-
 @media only screen and (min-width:768px) {
-
-	
-	#sub-section {
-		width:40%;
-		z-index:1;
-		overflow:auto;
-		position:fixed;
-	}
-
-	#main-section {
-		width:58%;
-		margin-left:42%;
-	}
-
-	.project-box {
-		width:95%;
-		display:block;
-	}
 }
-
 
 
 @media only screen and (min-width:992px) {
-
-	
-	#sub-section {
-		width:35%;
-	}
-
-	#main-section {
-		width:63%;
-		margin-left:37%;
-	}
 }
 
 
 @media only screen and (min-width:1200px) {
-
-	#sub-section {
-		width:30%;
-	}
-
-	#main-section {
-		width:68%;
-		margin-left:32%;
-		text-align:center;
-	}
-	
-	.project-box {
-		width:45%;
-		text-align:left;
-		display:inline-block;
-	}
-	
-
 }

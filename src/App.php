@@ -17,6 +17,7 @@ use Jasper\Projecthree\Errors\ErrorHandler;
 use Jasper\Projecthree\Routes\IndexRoute;
 use Jasper\Projecthree\Routes\UsersRoute;
 use Jasper\Projecthree\Routes\AuthRoute;
+use Jasper\Projecthree\Routes\DepartmentRoute;
 
 Dotenv::createImmutable(dirname(__DIR__))->safeLoad();
 
@@ -80,6 +81,8 @@ $app->group('', IndexRoute::class);
 $app->group('/users', UsersRoute::class);
 
 $app->group('/auth', AuthRoute::class);
+
+$app->group('/departments', DepartmentRoute::class);
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 

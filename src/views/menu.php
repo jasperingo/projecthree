@@ -1,6 +1,14 @@
 <div class="container">
   
   <ul class="menu">
+
+    <li>
+      <a href="departments/">
+        <?= $icons['department'] ?>
+        <div><?= $__('Departments') ?></div></a>
+      </a>
+    </li>
+
     
     <?php if ($user !== null) : ?>
     
