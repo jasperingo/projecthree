@@ -1,67 +1,4 @@
-<?php
 
-
-include_once'res/php/util.php';
-
-
-if (!isset($_GET['id'])) {
-	urlRedirect("400.html");
-}
-
-
-$response = getCurl(API_URL."getproject.php?id=".$_GET['id'], app_headers());
-
-if (curl_errno($response[0])) {
-	urlRedirect("500.html");
-}
-
-$code = httpCodeCurl($response[0]);
-
-$body = json_decode($response[1], true);
-
-curl_close($response[0]);
-
-
-switch ($code) {
-	case 404 :
-		urlRedirect("404.html");
-	case 403 :
-		urlRedirect("403.html");
-	case 500 :
-		urlRedirect("500.html");
-}
-
-
-$data = $body['success']['project'];
-
-
-$participants = ["student_id"=> $data['student_id'], "supervisor_id"=> $data['supervisor_id']];
-
-
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	
-	<meta charset="UTF-8">
-	
-	<title>Project <?=$strings['website_title_note'];?></title>
-	
-	<link rel="stylesheet" type="text/css" href="res/css/main.css">
-	<link rel="stylesheet" type="text/css" href="res/css/projectpage.css?c">
-	
-	<meta name="viewport"  content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="res/icons/favicon.png" type="image/png">
-	
-</head>
-
-
-<body>
-	
-	<?php include_once'res/php/header.php'; ?>
-	
-	
 	<section id="sub-section">
 		
 		<div id="project-page-topic">
@@ -146,15 +83,4 @@ $participants = ["student_id"=> $data['student_id'], "supervisor_id"=> $data['su
 		
 		
 	</section>
-	
-	
-	<?php include_once'res/php/footer.php'; ?>
-	
-	
-	
-</body>
-
-
-</html>
-
 

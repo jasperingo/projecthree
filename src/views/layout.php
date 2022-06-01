@@ -11,7 +11,8 @@
 		<link rel="stylesheet" type="text/css" href="res/css/menu.css" />
 		<link rel="stylesheet" type="text/css" href="res/css/index.css" />
 		<link rel="stylesheet" type="text/css" href="res/css/project.css" />
-		<link rel="stylesheet" type="text/css" href="res/css/department.css">
+		<link rel="stylesheet" type="text/css" href="res/css/department.css" />
+		<link rel="stylesheet" type="text/css" href="res/css/projectpage.css" />
 
 		<meta name="viewport"  content="width=device-width, initial-scale=1.0" />
 		

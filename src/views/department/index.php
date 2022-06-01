@@ -1,7 +1,7 @@
 <div class="container">
 	<section id="main-section">
 	
-		<div id="departments-heading">
+		<div class="heading-2">
 			<h2><?= $__('Departments') ?></h2>
 			
 			<?php if ($user !== null) : ?>

@@ -46,7 +46,7 @@
 				</li>
 
 				<li class="header-lg-btn">
-					<a href="project/create"><?= $__('create_project') ?></a>
+					<a href="projects/create"><?= $__('create_project') ?></a>
 				</li>
 
 				<?php else: ?>

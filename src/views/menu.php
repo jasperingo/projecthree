@@ -11,6 +11,13 @@
 
     
     <?php if ($user !== null) : ?>
+
+    <li>
+      <a href="projects/create">
+        <?= $icons['project_create'] ?>
+        <div><?= $__('create_project') ?></div></a>
+      </a>
+    </li>
     
     <li>
       <a href="users/<?= $user->id ?>">
@@ -23,13 +30,6 @@
       <a href="users/<?= $user->id ?>/update">
         <?= $icons['settings'] ?>
         <div><?= $__('Edit_profile') ?></div></a>
-      </a>
-    </li>
-
-    <li>
-      <a href="project/create">
-        <?= $icons['project_create'] ?>
-        <div><?= $__('create_project') ?></div></a>
       </a>
     </li>
 
