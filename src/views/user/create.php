@@ -2,7 +2,7 @@
 	
 	<form id="main-form" method="POST" action="" novalidate="novalidate">
 		
-		<div id="main-form-error"><?= $form_error ?></div>
+		<div id="main-form-error"><?= $__($form_error) ?></div>
 		
 		<div class="input-box">
 			<span class="input-span"><?= $__('first_name') ?></span>

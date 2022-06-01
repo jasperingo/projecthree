@@ -10,15 +10,21 @@
 		</div>
 
 		<ul id="departments-list">
+
+			<?php foreach ($departments as $department) : ?>
+
 			<li class="department-item">
-				<a href="/departments/1">
+				<a href="/departments/<?= $department->id ?>">
 					<?= $icons['department'] ?>
 					<div>
-						<div class="department-item-head">Information Technology</div>
-						<div>IFT</div>
+						<div class="department-item-head"><?= $department->name ?></div>
+						<div><?= $department->acronym ?></div>
 					</div>
 				</a>
 			</li>
+
+			<?php endforeach ?>
+			
 		</ul>
 
 	</section>

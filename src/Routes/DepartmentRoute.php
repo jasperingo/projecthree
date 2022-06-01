@@ -6,6 +6,7 @@ use Jasper\Projecthree\Controllers\DepartmentController;
 use Jasper\Projecthree\Middlewares\Auth\AuthMiddleware;
 use Jasper\Projecthree\Middlewares\Validators\DepartmentCreateValidatorMiddleware;
 use Jasper\Projecthree\Middlewares\Fetch\DepartmentFetchMiddleware;
+use Jasper\Projecthree\Middlewares\Validators\DepartmentUpdateValidatorMiddleware;
 
 class DepartmentRoute {
 
@@ -22,6 +23,15 @@ class DepartmentRoute {
 
     $route->get('/{id}', [DepartmentController::class, 'read'])
       ->add(DepartmentFetchMiddleware::class);
+
+    $route->get('/{id}/update', [DepartmentController::class, 'edit'])
+      ->add(DepartmentFetchMiddleware::class)
+      ->add(AuthMiddleware::class);
+    
+    $route->post('/{id}/update', [DepartmentController::class, 'update'])
+      ->add(DepartmentUpdateValidatorMiddleware::class)
+      ->add(DepartmentFetchMiddleware::class)
+      ->add(AuthMiddleware::class);
   }
 
 }

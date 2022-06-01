@@ -12,8 +12,12 @@ class DepartmentController extends BaseController {
 
   public function index(Response $response) 
   {
+
+    $departments = $this->entityManager->getRepository(Department::class)->findAll();
+
     return $this->renderer->render($response, 'department/index.php', [
-      'title' => 'Departments'
+      'title' => 'Departments',
+      'departments' =>  $departments,
     ]);
   }
 
@@ -40,6 +44,36 @@ class DepartmentController extends BaseController {
 
     return $response
       ->withHeader('Location', "/departments/{$department->id}")
+      ->withStatus(302);
+  }
+
+  public function edit(Request $request, Response $response) {
+    $department = $request->getAttribute('department');
+
+    return $this->renderer->render($response, 'department/update.php', [
+      'title' => 'Edit_department',
+      'data' => $department,
+      'form_error' => $this->session->getFlash('form_error'),
+      'form_success' => $this->session->getFlash('form_success'),
+      'name_error' => $this->session->getFlash('name_error'),
+      'acronym_error' => $this->session->getFlash('acronym_error'),
+    ]);
+  }
+
+  public function update(Request $request, Response $response) {
+    $data = $request->getParsedBody();
+
+    $department = $request->getAttribute('department');
+
+    $department->name = $data['name'];
+    $department->acronym = strtoupper($data['acronym']);
+
+    $this->entityManager->getRepository(Department::class)->save($department);
+    
+    $this->session->setFlash('form_success', 'Department_updated');
+    
+    return $response
+      ->withHeader('Location', "/departments/{$department->id}/update")
       ->withStatus(302);
   }
 

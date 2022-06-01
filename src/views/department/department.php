@@ -7,7 +7,7 @@
 		<div id="profile-page-name"><?= "{$data->name} ({$data->acronym})" ?></div>
 
 		<?php if ($user !== null) : ?>
-		<a id="profile-edit-link" href="/departments/<?= $data->id ?>/edit"><?= $__('Edit_department') ?></a>
+		<a id="profile-edit-link" href="/departments/<?= $data->id ?>/update"><?= $__('Edit_department') ?></a>
 		<?php endif ?>
 		
 	</section>
