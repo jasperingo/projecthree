@@ -2,10 +2,12 @@
 namespace Jasper\Projecthree\Models;
 
 use DateTime;
+use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Table;
-use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\PersistentCollection;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Jasper\Projecthree\Repositories\DepartmentRepository;
 
@@ -30,4 +32,7 @@ class Department {
 
 	#[Column(type: 'datetime', name: 'created_at')]
 	public DateTime $createdAt;
+
+	#[OneToMany(targetEntity: Project::class, mappedBy: 'department')]
+	public PersistentCollection $projects;
 }

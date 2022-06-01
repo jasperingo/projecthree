@@ -22,6 +22,7 @@ class ErrorHandler extends SlimErrorHandler
       $response = $this->responseFactory->createResponse();
 
       return $this->viewRenderer->render($response, 'error.php', [
+        'title' => $this->statusCode,
         'code' => $this->statusCode,
         'message' => $this->exception->getMessage(),
         'stack' => $this->exception->getTrace()

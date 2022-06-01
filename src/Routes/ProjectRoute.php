@@ -11,6 +11,11 @@ class ProjectRoute {
   {
     $route->get('/create', [ProjectController::class, 'add'])
       ->add(AuthMiddleware::class);
+
+    $route->post('/create', [ProjectController::class, 'create'])
+      ->add(AuthMiddleware::class);
+
+    $route->get('/{id}', [ProjectController::class, 'read']);
   }
   
 }

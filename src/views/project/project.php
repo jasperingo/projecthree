@@ -1,17 +1,17 @@
+<div class="container">
 
 	<section id="sub-section">
 		
 		<div id="project-page-topic">
-			<?= $icons['project']; ?><h1><?=$data['topic'];?></h1>
+			<?= $icons['project']; ?>
+			<h1><?= $data->topic ?></h1>
 		</div>
-		
-		<?php $nav_active = 0; include_once'res/php/projectnav.php'; ?>
 		
 	</section>
 	
 	<section id="main-section">
 		
-		<?php if ($data['document_id'] > 0) : ?>
+		<?php /*if ($data['document_id'] > 0) : ?>
 		<a href="download-document.php?id=<?=$data['document_id'];?>" id="project-page-download"><?=$strings['download_document'];?></a>
 		<?php else : ?>
 		<div id="project-page-download-blur"><?=$strings['no_document'];?></div>
@@ -80,7 +80,8 @@
 			}?>
 			<div><?=$data['rating']." ".$strings['reviews'];?></div>
 		</div>
-		
-		
-	</section>
 
+		*/ ?>
+
+	</section>
+</div>

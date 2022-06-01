@@ -8,6 +8,8 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Jasper\Projecthree\Repositories\UserRepository;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[Entity(repositoryClass: UserRepository::class), Table(name: 'users')]
 class User {
@@ -34,6 +36,9 @@ class User {
 	#[Column(type: 'datetime', name: 'created_at')]
 	public DateTime $createdAt;
 
+	#[OneToMany(targetEntity: Collaborator::class, mappedBy: 'user')]
+	public ArrayCollection $collaborations;
+	
 	public function getFullName() {
 		return "{$this->firstName} {$this->lastName}";
 	}
