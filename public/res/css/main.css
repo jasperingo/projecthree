@@ -498,6 +498,63 @@ div.input-box {
 	background-color: var(--color-surface);
 }
 
+
+#sub-section {
+	padding: var(--dimen-md);
+}
+
+#profile-page-img > svg {
+	width: 5em;
+	height: 5em;
+	display: block;
+	padding: var(--dimen-lg);
+	border: 1px solid #DCDCDC;
+	fill: var(--color-secondary);
+	margin: 0 auto var(--dimen-lg);
+	border-radius: var(--dimen-sm);
+}
+
+#profile-page-name {
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+}
+
+#profile-edit-link {
+	display: block;
+	width: fit-content;
+	text-align: center;
+	padding: var(--dimen-xs);
+	border-radius: var(--dimen-xs);
+	color: var(--color-on-primary);
+	margin: var(--dimen-md) auto auto;
+	background-color: var(--color-primary);
+}
+
+#profile-edit-link:hover {
+	background-color: var(--color-primary-variant);
+}
+
+#profile-projects-head {
+	display: flex;
+	font-weight: bold;
+	width: fit-content;
+	align-items: center;
+	gap: var(--dimen-xs);
+	margin: var(--dimen-sm) 0;
+	color: var(--color-primary);
+	background-color: var(--color-surface);
+	padding: 0 var(--dimen-sm) var(--dimen-sm);
+	border-bottom: 1px solid var(--color-primary);
+}
+
+#profile-projects-head > svg {
+	width: var(--dimen-md);
+	height: var(--dimen-md);
+	fill: var(--color-primary);
+}
+
+
 .no-data-box {
 	width:90%;
 	clear:both;

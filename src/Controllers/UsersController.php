@@ -10,7 +10,7 @@ class UsersController extends BaseController {
 
   public function register(Response $response) 
   {
-    return $this->renderer->render($response, "user/create.php", [
+    return $this->renderer->render($response, 'user/create.php', [
       'title' => 'register',
       'first_name' => $this->session->getFlash('first_name'),
       'last_name' => $this->session->getFlash('last_name'),
@@ -46,8 +46,8 @@ class UsersController extends BaseController {
   public function read(Request $request, Response $response) {
     $user = $request->getAttribute('user');
 
-    return $this->renderer->render($response, "user/user.php", [
-      'title' => ((object) $user)->getFullName(), 
+    return $this->renderer->render($response, 'user/user.php', [
+      'title' => $user->getFullName(), 
       'data' => $user
     ]);
   }
@@ -55,7 +55,7 @@ class UsersController extends BaseController {
   public function edit(Request $request, Response $response) {
     $user = $request->getAttribute('user');
 
-    return $this->renderer->render($response, "user/update.php", [
+    return $this->renderer->render($response, 'user/update.php', [
       'title' => $user->getFullName(), 
       'data' => $user,
       'profile_form_error' => $this->session->getFlash('profile_form_error'),

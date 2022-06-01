@@ -1,15 +1,15 @@
 <div class="container">
 	<section id="sub-section">
 		
-		<div id="user-page-img"><?= $icons['user'] ?></div>
+		<div id="profile-page-img"><?= $icons['user'] ?></div>
 
-		<div id="user-page-name"><?= "{$data->firstName} {$data->lastName}" ?></div>
+		<div id="profile-page-name"><?= "{$data->firstName} {$data->lastName}" ?></div>
 		
 	</section>
 
 	<section id="main-section">
 		
-		<div id="user-projects-head">
+		<div id="profile-projects-head">
 			<?= $icons['project'] ?>
 			<div><?= $__('projects') ?></div>
 		</div>

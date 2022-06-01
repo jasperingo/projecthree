@@ -3,9 +3,9 @@ namespace Jasper\Projecthree\Validators;
 
 use Laminas\Validator\AbstractValidator;
 use Doctrine\ORM\EntityManager;
-use Jasper\Projecthree\Models\User;
+use Jasper\Projecthree\Models\Department;
 
-class EmailUniqueValidator extends AbstractValidator {
+class DepartmentAcronymUniqueValidator extends AbstractValidator {
   const EXISTS = 'exists';
 
   private EntityManager $entityManager;
@@ -22,7 +22,7 @@ class EmailUniqueValidator extends AbstractValidator {
 	public function isValid($value) {
     $this->setValue($value);
 
-    if ($this->entityManager->getRepository(User::class)->existsByEmail($value)) {
+    if ($this->entityManager->getRepository(Department::class)->existsByAcronym($value)) {
       $this->error(self::EXISTS);
       return false;
     }

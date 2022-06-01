@@ -2,8 +2,11 @@
 	<section id="main-section">
 	
 		<div id="departments-heading">
-			<h2>Departments</h2>
+			<h2><?= $__('Departments') ?></h2>
+			
+			<?php if ($user !== null) : ?>
 			<a href="/departments/create">Add</a>
+			<?php endif ?>
 		</div>
 
 		<ul id="departments-list">
