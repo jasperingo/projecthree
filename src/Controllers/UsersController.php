@@ -43,7 +43,8 @@ class UsersController extends BaseController {
       ->withStatus(302);
   }
 
-  public function read(Request $request, Response $response) {
+  public function read(Request $request, Response $response) 
+  {
     $user = $request->getAttribute('user');
 
     return $this->renderer->render($response, 'user/user.php', [
@@ -52,7 +53,8 @@ class UsersController extends BaseController {
     ]);
   }
 
-  public function edit(Request $request, Response $response) {
+  public function edit(Request $request, Response $response) 
+  {
     $user = $request->getAttribute('user');
 
     return $this->renderer->render($response, 'user/update.php', [
@@ -70,7 +72,8 @@ class UsersController extends BaseController {
     ]);
   }
 
-  public function update(Request $request, Response $response) {
+  public function update(Request $request, Response $response) 
+  {
     $data = $request->getParsedBody();
 
     $user = $request->getAttribute('user');
@@ -89,7 +92,8 @@ class UsersController extends BaseController {
       ->withStatus(302);
   }
 
-  public function updatePassword(Request $request, Response $response) {
+  public function updatePassword(Request $request, Response $response) 
+  {
     $data = $request->getParsedBody();
 
     $user = $request->getAttribute('user');

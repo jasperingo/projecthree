@@ -7,12 +7,12 @@ use DateTime;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Jasper\Projecthree\Models\Department;
+use Jasper\Projecthree\Models\Project;
 
 class DepartmentController extends BaseController {
 
   public function index(Response $response) 
   {
-
     $departments = $this->entityManager->getRepository(Department::class)->findAll();
 
     return $this->renderer->render($response, 'department/index.php', [
@@ -21,7 +21,8 @@ class DepartmentController extends BaseController {
     ]);
   }
 
-  public function add(Response $response) {
+  public function add(Response $response) 
+  {
     return $this->renderer->render($response, 'department/create.php', [
       'title' => 'Add_department',
       'name' => $this->session->getFlash('name'),
@@ -32,7 +33,8 @@ class DepartmentController extends BaseController {
     ]);
   }
 
-  public function create(Request $request, Response $response) {
+  public function create(Request $request, Response $response) 
+  {
     $data = $request->getParsedBody();
 
     $department = new Department;
@@ -47,7 +49,8 @@ class DepartmentController extends BaseController {
       ->withStatus(302);
   }
 
-  public function edit(Request $request, Response $response) {
+  public function edit(Request $request, Response $response) 
+  {
     $department = $request->getAttribute('department');
 
     return $this->renderer->render($response, 'department/update.php', [
@@ -60,7 +63,8 @@ class DepartmentController extends BaseController {
     ]);
   }
 
-  public function update(Request $request, Response $response) {
+  public function update(Request $request, Response $response) 
+  {
     $data = $request->getParsedBody();
 
     $department = $request->getAttribute('department');
@@ -77,12 +81,18 @@ class DepartmentController extends BaseController {
       ->withStatus(302);
   }
 
-  public function read(Request $request, Response $response) {
+  public function read(Request $request, Response $response) 
+  {
     $department = $request->getAttribute('department');
+
+    $projects = $this->entityManager->
+      getRepository(Project::class)->
+      findBy(['department' => $department]);
 
     return $this->renderer->render($response, 'department/department.php', [
       'title' => $department->name,
       'data' => $department,
+      'projects' => $projects,
     ]);
   }
 }

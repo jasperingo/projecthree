@@ -18,6 +18,19 @@
 			<?= $icons['project'] ?>
 			<div><?= $__('projects') ?></div>
 		</div>
+
+		<ul class="main-list-no-margin">
+			<?php foreach ($projects as $project) : ?>
+			<li class="main-item">
+				<a href="/projects/<?= $project->id ?>">
+					<?= $icons['project'] ?>
+					<div>
+						<div class="main-item-head"><?= $project->topic ?></div>
+					</div>
+				</a>
+			</li>
+			<?php endforeach ?>
+		</ul>
 		
 	</section>
 

@@ -20,7 +20,8 @@ class ProjectController extends BaseController {
 
   const DOCUMEMNT_DIR = __DIR__ . '/../../public/res/documents';
 
-  private function saveDocument(UploadedFile $file, Project $project) {
+  private function saveDocument(UploadedFile $file, Project $project) 
+  {
     $extension = pathinfo($file->getClientFilename(), PATHINFO_EXTENSION);
 
     $filename = sprintf('%s.%0.8s', "document-{$project->id}", $extension);
@@ -28,7 +29,8 @@ class ProjectController extends BaseController {
     $file->moveTo(self::DOCUMEMNT_DIR . DIRECTORY_SEPARATOR . $filename);
   }
 
-  public function add(Response $response) {
+  public function add(Response $response) 
+  {
 
     $departments = $this->entityManager->getRepository(Department::class)->findAll();
 
@@ -46,7 +48,8 @@ class ProjectController extends BaseController {
     ]);
   }
 
-  public function create(Request $request, Response $response) {
+  public function create(Request $request, Response $response) 
+  {
     $data = $request->getParsedBody();
 
     $file = $request->getUploadedFiles()['document'];
@@ -81,7 +84,8 @@ class ProjectController extends BaseController {
       ->withStatus(302);
   }
 
-  public function edit(Request $request, Response $response) {
+  public function edit(Request $request, Response $response) 
+  {
     $project = $request->getAttribute('project');
 
     $departments = $this->entityManager->getRepository(Department::class)->findAll();
@@ -103,7 +107,8 @@ class ProjectController extends BaseController {
     ]);
   }
 
-  public function update(Request $request, Response $response) {
+  public function update(Request $request, Response $response) 
+  {
     $data = $request->getParsedBody();
 
     $file = $request->getUploadedFiles()['document'];
@@ -129,7 +134,8 @@ class ProjectController extends BaseController {
       ->withStatus(302);
   }
 
-  public function createCollaborator(Request $request, Response $response) {
+  public function createCollaborator(Request $request, Response $response) 
+  {
     $data = $request->getParsedBody();
 
     $project = $request->getAttribute('project');
@@ -150,7 +156,8 @@ class ProjectController extends BaseController {
       ->withStatus(302);
   }
 
-  public function read(Request $request, Response $response) {
+  public function read(Request $request, Response $response) 
+  {
     $project = $request->getAttribute('project');
 
     $documentName = "document-{$project->id}.pdf";
