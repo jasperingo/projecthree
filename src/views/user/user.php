@@ -14,18 +14,18 @@
 			<div><?= $__('projects') ?></div>
 		</div>
 		
-		<?php //foreach ($projects AS $pj) : ?>
-		<?php //include'res/php/project.php'; ?>
-		<?php //endforeach; ?>
-		
-		<?php //if (empty($projects)) : ?>
-		<?//= get_no_data_box($strings['no_project']); ?>
-		<?php// endif; ?>
-		
-		<?php /*echo getPagesBox("page", ceil($projects_count/PAGE_LIMIT), "user.php?id=".$_GET['id']."&page=", null, "#user-projects-head", array(
-			"next"=> $icons['next'],
-			"previous"=> $icons['previous'],
-		));*/ ?>
-		
+		<ul class="main-list-no-margin">
+			<?php foreach ($collaborations as $collaboration) : ?>
+			<li class="main-item">
+				<a href="/projects/<?= $collaboration->project->id ?>">
+					<?= $icons['project'] ?>
+					<div>
+						<div class="main-item-head"><?= $collaboration->project->topic ?></div>
+					</div>
+				</a>
+			</li>
+			<?php endforeach ?>
+		</ul>
+
 	</section>
 </div>

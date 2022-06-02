@@ -5,6 +5,7 @@ use DateTime;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Jasper\Projecthree\Models\User;
+use Jasper\Projecthree\Models\Collaborator;
 
 class UsersController extends BaseController {
 
@@ -47,9 +48,14 @@ class UsersController extends BaseController {
   {
     $user = $request->getAttribute('user');
 
+    $collaborations = $this->entityManager
+      ->getRepository(Collaborator::class)
+      ->findWithProjectByUserId($user->id);
+
     return $this->renderer->render($response, 'user/user.php', [
       'title' => $user->getFullName(), 
-      'data' => $user
+      'data' => $user,
+      'collaborations' => $collaborations,
     ]);
   }
 
