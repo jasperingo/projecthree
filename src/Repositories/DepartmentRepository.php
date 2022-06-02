@@ -10,6 +10,11 @@ class DepartmentRepository extends EntityRepository {
     $this->getEntityManager()->flush();
   }
 
+  public function existsById(int $id) {
+    $department = $this->find($id);
+    return $department !== null;
+  }
+
   public function existsByName(string $name) {
     $department = $this->findOneBy(['name' => $name]);
     return $department !== null;

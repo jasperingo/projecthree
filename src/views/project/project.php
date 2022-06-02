@@ -2,86 +2,54 @@
 
 	<section id="sub-section">
 		
-		<div id="project-page-topic">
-			<?= $icons['project']; ?>
-			<h1><?= $data->topic ?></h1>
-		</div>
+		<div id="profile-page-img"><?= $icons['project']; ?></div>
 		
+		<div id="profile-page-name"><?= $data->topic ?></div>
+
+		<div id="profile-page-description"><?= $data->description ?></div>
+
+		<?php if ($canEdit) : ?>
+		<a id="profile-edit-link" href="/projects/<?= $data->id ?>/update"><?= $__('Edit_project') ?></a>
+		<?php endif ?>
+
+		<a id="download-link" href="/projects/<?= $data->id ?>">
+			<?= $icons['download']; ?>
+			<span><?= $__('download_document') ?></span>
+		</a>
+
 	</section>
 	
 	<section id="main-section">
-		
-		<?php /*if ($data['document_id'] > 0) : ?>
-		<a href="download-document.php?id=<?=$data['document_id'];?>" id="project-page-download"><?=$strings['download_document'];?></a>
-		<?php else : ?>
-		<div id="project-page-download-blur"><?=$strings['no_document'];?></div>
-		<?php endif; ?>
-		
-		<a href="university-departments.php?id=<?=$data['university_id'];?>" id="project-page-school">
-			<?=$icons['department'];?>
-			<span><?=$data['department_name'];?></span>
-			<span id="project-page-school-in"><?=$strings['in'];?></span>
-			<?= $icons['university']; ?>
-			<span><?=$data['university_name'];?></span>
-		</a>
-		
-		<div id="project-page-privacy-date">
-			<span>
-				<?=$icons['privacy'];?>
-				<span><?=$strings['privacy_arr'][$data['privacy']];?></span>
-			</span>
-			<span>
-				<?=$icons['date'];?>
-				<span><?=makeDate($data['creation_date']);?></span>
-			</span>
-		</div>
-		
-		<div id="project-page-participants">
-			
-			<div class="project-page-participant">
-				<div class="project-page-participant-head">
-					<img class="project-page-participant-img" src="api/photos/<?=$data['supervisor_photo_name'];?>" />
-				</div><a href="user.php?id=<?=$data['supervisor_id'];?>" class="project-page-participant-body">
-					<div class="project-page-participant-name"><?=$data['supervisor_name'];?></div>
-					<div class="project-page-participant-role"><?=$strings['supervisor'];?></div>
+
+		<div>
+			<h4 class="heading-4 ">Department</h4>
+			<div class="main-item">
+				<a href="/departments/<?= $data->department->id ?>">
+					<?= $icons['department'] ?>
+					<div>
+						<div class="main-item-head"><?= $data->department->name ?></div>
+						<div><?= $data->department->acronym ?></div>
+					</div>
 				</a>
 			</div>
-			
-			<div class="project-page-participant">
-				<div class="project-page-participant-head">
-					<img class="project-page-participant-img" src="api/photos/<?=$data['student_photo_name'];?>" />
-				</div><a href="user.php?id=<?=$data['student_id'];?>" class="project-page-participant-body">
-					<div class="project-page-participant-name"><?=$data['student_name'];?></div>
-					<div class="project-page-participant-role"><?=$strings['student'];?></div>
-				</a>
-			</div>
-			
-		</div>
-		
-		
-		<div id="project-page-privacy-description">
-			<?php if (!empty($data['description'])) : ?>
-			<?=lineBreakString($data['description']);?>
-			<?php else : ?>
-			<div><?=$strings['no_description'];?></div>
-			<?php endif; ?>
-		</div>
-		
-		
-		<div id="project-page-rating">
-			<?php for ($i=1;$i<6;$i++) {
-				if ($data['rating'] < $i && $data['rating'] <= ($i-1)) {
-					echo $icons['blank_star']; 
-				} elseif ($data['rating'] < $i && $data['rating'] > ($i-1)) {
-					echo $icons['half_star']; 
-				} else {
-					echo $icons['star'];
-				}
-			}?>
-			<div><?=$data['rating']." ".$strings['reviews'];?></div>
 		</div>
 
-		*/ ?>
+		<div>
+			<h4 class="heading-4 ">Collaborators</h4>
+			<ul class="main-list-no-margin">
+				<?php foreach ($data->collaborators as $collaborator) : ?>
+				<li class="main-item">
+					<a href="/users/<?= $collaborator->user->id ?>">
+						<?= $icons['user'] ?>
+						<div>
+							<div class="main-item-head"><?= $collaborator->user->getFullName() ?></div>
+						</div>
+					</a>
+				</li>
+				<?php endforeach ?>
+			</ul>
+		</div>
 
 	</section>
+
 </div>

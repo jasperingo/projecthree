@@ -47,8 +47,10 @@
 	"Incorrect_email_or_password": "Incorrect email or password",
 	"error_Name_exists": "This name already exists",
 	"error_Acronym_exists": "This acronym already exists",
+	"error_Department_do_not_exist" : "This department don't exist",
 	
 	"project" : "Project",
+	"Edit_project" : "Edit project",
 	"projects" : "Projects",
 	"create_project" : "Create project",
 	"no_project" : "No project",

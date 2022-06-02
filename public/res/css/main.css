@@ -521,6 +521,13 @@ div.input-box {
 	text-align: center;
 }
 
+#profile-page-description {
+	padding: var(--dimen-sm);
+	margin: var(--dimen-sm) auto;
+	border-radius: var(--dimen-sm);
+	border: 1px solid var(--color-background);
+}
+
 #profile-edit-link {
 	display: block;
 	width: fit-content;
@@ -555,6 +562,32 @@ div.input-box {
 	fill: var(--color-primary);
 }
 
+#download-link {
+	display: flex;
+	width: fit-content;
+	align-items: center;
+	padding: var(--dimen-sm);
+	justify-content: center;
+	column-gap: var(--dimen-sm);
+	margin: var(--dimen-md) auto;
+	border-radius: var(--dimen-xs);
+	border: 1px solid var(--color-primary)
+}
+
+#download-link:hover {
+	background-color: var(--color-primary-variant);
+}
+
+#download-link > svg {
+	width: var(--dimen-xl);
+	height: var(--dimen-xl);
+	fill: var(--color-primary);
+}
+
+#download-link > span {
+	color: var(--color-primary);
+}
+
 .heading-2 {
 	display: flex;
 	align-items: center;
@@ -577,6 +610,58 @@ div.input-box {
 .heading-2 > a:hover {
 	background-color: var(--color-primary-variant);
 }
+
+.heading-4 {
+	margin: 0 0 var(--dimen-xs);
+}
+
+
+.main-list,
+.main-list-no-margin {
+	padding: 0;
+	list-style: none;
+	margin: var(--dimen-md) 0;
+}
+
+.main-list-no-margin {
+	margin: 0;
+}
+
+.main-item {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	margin-bottom: var(--dimen-md);
+}
+
+.main-item > a {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: var(--dimen-sm);
+	column-gap: var(--dimen-xs);
+	color: var(--color-on-surface);
+	border-radius: var(--dimen-xs);
+}
+
+.main-item > a:hover {
+	background-color: var(--color-background);
+}
+
+.main-item > a > div {
+	flex-grow: 1;
+}
+
+.main-item svg {
+	width: var(--dimen-xxl);
+	height: var(--dimen-xxl);
+	fill: var(--color-primary)
+}
+
+.main-item-head {
+	font-weight: bold;
+}
+
 
 .no-data-box {
 	width:90%;
@@ -628,6 +713,16 @@ form.hide {
 	#main-form {
 		width: 30em;
 		border: 1px solid var(--color-background);
+	}
+
+	.main-list {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: var(--dimen-sm);
+	}
+
+	.main-item {
+		flex-basis: 48%;
 	}
 }
 

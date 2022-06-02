@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Jasper\Projecthree\Repositories\ProjectRepository;
+use Doctrine\ORM\PersistentCollection;
 
 #[Entity(repositoryClass: ProjectRepository::class), Table(name: 'projects')]
 class Project {
@@ -30,9 +31,9 @@ class Project {
   #[Column(type: 'datetime', name: 'created_at')]
 	public DateTime $createdAt;
 
-  #[ManyToOne(targetEntity: Department::class, inversedBy: 'projects')]
+  #[ManyToOne(targetEntity: Department::class, inversedBy: 'projects', fetch: 'EAGER')]
   public Department $department;
 
-  #[OneToMany(targetEntity: Collaborator::class, mappedBy: 'project')]
-	public ArrayCollection $collaborators;
+  #[OneToMany(targetEntity: Collaborator::class, mappedBy: 'project', fetch: 'EAGER')]
+	public PersistentCollection $collaborators;
 }

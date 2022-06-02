@@ -9,15 +9,15 @@
 			<?php endif ?>
 		</div>
 
-		<ul id="departments-list">
+		<ul class="main-list">
 
 			<?php foreach ($departments as $department) : ?>
 
-			<li class="department-item">
+			<li class="main-item">
 				<a href="/departments/<?= $department->id ?>">
 					<?= $icons['department'] ?>
 					<div>
-						<div class="department-item-head"><?= $department->name ?></div>
+						<div class="main-item-head"><?= $department->name ?></div>
 						<div><?= $department->acronym ?></div>
 					</div>
 				</a>

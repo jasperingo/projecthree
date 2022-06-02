@@ -16,10 +16,15 @@
 		
 		<div class="input-box">
 			<span class="input-span"><?= $__('department') ?></span>
-			<select class="main-select" name="department_id" value="<?= $department_id ?>" >
+			<select class="main-select" name="department_id">
 				<option value=""><?= $__('choose_one') ?></option>
 				<?php foreach ($departments as $department) : ?>
-					<option value="<?= $department->id ?>"><?= "{$department->name} ({$department->acronym})" ?></option>
+				<option 
+					value="<?= $department->id ?>"
+					<?= intval($department_id) === $department->id ? 'selected' : ''?>
+				>
+					<?= "{$department->name} ({$department->acronym})" ?>
+				</option>
 				<?php endforeach ?>
 			</select>
 			<div class="input-error"><?= $__($department_id_error) ?></div>

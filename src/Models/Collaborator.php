@@ -20,7 +20,7 @@ class Collaborator {
 	]
 	public int $id;
 
-	#[ManyToOne(targetEntity: User::class, inversedBy: 'collaborations')]
+	#[ManyToOne(targetEntity: User::class, inversedBy: 'collaborations', fetch: 'EAGER')]
 	public User $user;
 
 	#[ManyToOne(targetEntity: Project::class, inversedBy: 'collaborators')]
