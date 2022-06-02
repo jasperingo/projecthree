@@ -6,6 +6,7 @@ use Jasper\Projecthree\Controllers\ProjectController;
 use Jasper\Projecthree\Middlewares\Auth\AuthMiddleware;
 use Jasper\Projecthree\Middlewares\Validators\ProjectCreateValidatorMiddleware;
 use Jasper\Projecthree\Middlewares\Fetch\ProjectFetchMiddleware;
+use Jasper\Projecthree\Middlewares\Permissions\ProjectUpdatePermissionMiddleware;
 
 class ProjectRoute {
 
@@ -20,6 +21,16 @@ class ProjectRoute {
 
     $route->get('/{id}', [ProjectController::class, 'read'])
       ->add(ProjectFetchMiddleware::class);
+
+    $route->get('/{id}/update', [ProjectController::class, 'edit'])
+      ->add(ProjectUpdatePermissionMiddleware::class)
+      ->add(ProjectFetchMiddleware::class)
+      ->add(AuthMiddleware::class);
+
+    $route->post('/{id}/update', [ProjectController::class, 'update'])
+      ->add(ProjectUpdatePermissionMiddleware::class)
+      ->add(ProjectFetchMiddleware::class)
+      ->add(AuthMiddleware::class);
   }
   
 }

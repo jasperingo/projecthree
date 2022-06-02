@@ -1,6 +1,6 @@
 <div class="container">
 	
-	<form id="main-form" method="POST" action="" novalidate="novalidate" enctype="multipart/formdata">
+	<form id="main-form" method="POST" action="" novalidate="novalidate" enctype="multipart/form-data">
 		
 		<div class="heading-2">
 			<h2><?= $__('create_project') ?></h2>
@@ -32,8 +32,14 @@
 
 		<div class="input-box">
 			<span class="input-span"><?= $__('description') ?></span>
-			<textarea class="main-textarea" type="text" name="description" value="<?= $description ?>"></textarea>
+			<textarea class="main-textarea" name="description" value="<?= $description ?>"></textarea>
 			<div class="input-error"><?= $__($description_error) ?></div>
+		</div>
+
+		<div class="input-box">
+			<span class="input-span"><?= $__('Document') ?></span>
+			<input class="main-input" type="file" name="document" accept="application/pdf" />
+			<div class="input-error"><?= $__($document_error) ?></div>
 		</div>
 		
 		<button type="submit" id="main-form-btn" name="create_project"><?= $__('create') ?></button>

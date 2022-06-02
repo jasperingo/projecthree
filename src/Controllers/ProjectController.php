@@ -3,6 +3,8 @@ namespace Jasper\Projecthree\Controllers;
 
 use function current;
 use function array_filter;
+use function sprintf;
+use function pathinfo;
 
 use DateTime;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -29,11 +31,14 @@ class ProjectController extends BaseController {
       'topic_error' => $this->session->getFlash('topic_error'),
       'description_error' => $this->session->getFlash('description_error'),
       'department_id_error' => $this->session->getFlash('department_id_error'),
+      'document_error' => $this->session->getFlash('document_error'),
     ]);
   }
 
   public function create(Request $request, Response $response) {
     $data = $request->getParsedBody();
+
+    $file = $request->getUploadedFiles()['document'];
 
     $project = new Project;
     $project->topic = $data['topic'];
@@ -44,7 +49,7 @@ class ProjectController extends BaseController {
       ->getRepository(Department::class)
       ->find($data['department_id']);
 
-    $this->entityManager->transactional(function (EntityManager $entityManager) use ($project) {
+    $this->entityManager->transactional(function (EntityManager $entityManager) use ($project, $file) {
   
       $entityManager->getRepository(Project::class)->save($project);
 
@@ -56,6 +61,12 @@ class ProjectController extends BaseController {
         ->find($this->session->get('user')->id);
 
       $entityManager->getRepository(Collaborator::class)->save($collaborator);
+
+      $extension = pathinfo($file->getClientFilename(), PATHINFO_EXTENSION);
+
+      $filename = sprintf('%s.%0.8s', "document-{$project->id}", $extension);
+
+      $file->moveTo(__DIR__ . '/../../public/res/documents' . DIRECTORY_SEPARATOR . $filename);
     });
 
     return $response
@@ -63,8 +74,54 @@ class ProjectController extends BaseController {
       ->withStatus(302);
   }
 
+  public function edit(Request $request, Response $response) {
+    $project = $request->getAttribute('project');
+
+    $departments = $this->entityManager->getRepository(Department::class)->findAll();
+
+    return $this->renderer->render($response, 'project/update.php', [
+      'title' => 'Edit_project',
+      'data' => $project,
+      'departments' => $departments,
+      'form_error' => $this->session->getFlash('form_error'),
+      'form_success' => $this->session->getFlash('form_success'),
+      'topic_error' => $this->session->getFlash('topic_error'),
+      'description_error' => $this->session->getFlash('description_error'),
+      'department_id_error' => $this->session->getFlash('department_id_error'),
+      'document_error' => $this->session->getFlash('document_error'),
+      'collaborator_form_error' => $this->session->getFlash('form_error'),
+      'collaborator_form_success' => $this->session->getFlash('form_success'),
+      'collaborator_email' => $this->session->getFlash('collaborator_email'),
+      'collaborator_email_error' => $this->session->getFlash('collaborator_email_error'),
+    ]);
+  }
+
+  public function update(Request $request, Response $response) {
+    $project = $request->getAttribute('project');
+
+    $departments = $this->entityManager->getRepository(Department::class)->findAll();
+
+    return $this->renderer->render($response, 'project/update.php', [
+      'title' => 'Edit_project',
+      'data' => $project,
+      'departments' => $departments,
+      'form_error' => $this->session->getFlash('form_error').' Yam is ggod',
+      'form_success' => $this->session->getFlash('form_success'),
+      'topic_error' => $this->session->getFlash('topic_error'),
+      'description_error' => $this->session->getFlash('description_error'),
+      'department_id_error' => $this->session->getFlash('department_id_error'),
+      'document_error' => $this->session->getFlash('document_error'),
+      'collaborator_form_error' => $this->session->getFlash('form_error'),
+      'collaborator_form_success' => $this->session->getFlash('form_success'),
+      'collaborator_email' => $this->session->getFlash('collaborator_email'),
+      'collaborator_email_error' => $this->session->getFlash('collaborator_email_error'),
+    ]);
+  }
+
   public function read(Request $request, Response $response) {
     $project = $request->getAttribute('project');
+
+    $documentName = "document-{$project->id}.pdf";
     
     $user = $this->session->get('user');
 
@@ -86,6 +143,7 @@ class ProjectController extends BaseController {
       'title' => $project->topic,
       'data' => $project,
       'canEdit' => $canEdit,
+      'documentUrl' => "/res/documents/$documentName",
     ]);
   }
 }

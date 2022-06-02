@@ -1,3 +1,6 @@
 /vendor/
+/public/res/documents/*
 
 .env
+
+!/public/res/documents/.gitkeep

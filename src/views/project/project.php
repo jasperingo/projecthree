@@ -12,7 +12,7 @@
 		<a id="profile-edit-link" href="/projects/<?= $data->id ?>/update"><?= $__('Edit_project') ?></a>
 		<?php endif ?>
 
-		<a id="download-link" href="/projects/<?= $data->id ?>">
+		<a id="download-link" href="<?= $documentUrl ?>" download>
 			<?= $icons['download']; ?>
 			<span><?= $__('download_document') ?></span>
 		</a>

@@ -64,6 +64,7 @@ a {
 input, select, textarea, button {
 	outline: none;
 	font-size: medium;
+	font-family: normal;
 }
 
 main {
@@ -366,7 +367,6 @@ div.input-box {
 	border: none;
 	display: block;
 	height: 6.25em;
-	font-family: normal;
 	padding: var(--dimen-xs);
 	color: var(--color-on-surface);
 	border-radius: var(--dimen-xs);

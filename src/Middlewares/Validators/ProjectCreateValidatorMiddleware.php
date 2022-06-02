@@ -6,9 +6,11 @@ use Aura\Session\Segment;
 use Doctrine\ORM\EntityManager;
 use Laminas\Validator\NotEmpty;
 use Laminas\Validator\ValidatorChain;
-use Psr\Http\Message\RequestInterface as Request;
+use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Jasper\Projecthree\Validators\DepartmentIdExistsValidator;
+use Laminas\Validator\File\UploadFile;
+use Laminas\Validator\File\Extension;
 
 class ProjectCreateValidatorMiddleware {
   public function __construct(
@@ -56,6 +58,18 @@ class ProjectCreateValidatorMiddleware {
       $error = true;
       foreach ($department->getMessages() as $message) {
         $this->session->setFlash('department_id_error', $message);
+      }
+    }
+
+    $document = new ValidatorChain;
+    $document->attach((new UploadFile)->setMessage('Field_is_required'), true);
+    $document->attach((new Extension(['pdf']))->setMessage('error_Document_type'));
+
+    $files = $request->getUploadedFiles();
+    if (!$document->isValid($files['document'])) {
+      $error = true;
+      foreach ($document->getMessages() as $message) {
+        $this->session->setFlash('document_error', $message);
       }
     }
     
