@@ -54,7 +54,9 @@
 	"Edit_project" : "Edit project",
 	"projects" : "Projects",
 	"create_project" : "Create project",
+	"Project_updated": "Project updated",
 	"Add_collaborator" : "Add collaborator",
+	"Collaborator_added" : "Collaborator added",
 	"no_project" : "No project",
 	"top_projects" : "Top projects",
 

@@ -7,6 +7,8 @@ use Jasper\Projecthree\Middlewares\Auth\AuthMiddleware;
 use Jasper\Projecthree\Middlewares\Validators\ProjectCreateValidatorMiddleware;
 use Jasper\Projecthree\Middlewares\Fetch\ProjectFetchMiddleware;
 use Jasper\Projecthree\Middlewares\Permissions\ProjectUpdatePermissionMiddleware;
+use Jasper\Projecthree\Middlewares\Validators\ProjectUpdateValidatorMiddleware;
+use Jasper\Projecthree\Middlewares\Validators\CollaboratorCreateValidatorMiddleware;
 
 class ProjectRoute {
 
@@ -28,6 +30,13 @@ class ProjectRoute {
       ->add(AuthMiddleware::class);
 
     $route->post('/{id}/update', [ProjectController::class, 'update'])
+      ->add(ProjectUpdateValidatorMiddleware::class)
+      ->add(ProjectUpdatePermissionMiddleware::class)
+      ->add(ProjectFetchMiddleware::class)
+      ->add(AuthMiddleware::class);
+
+    $route->post('/{id}/collaborator/create', [ProjectController::class, 'createCollaborator'])
+      ->add(CollaboratorCreateValidatorMiddleware::class)
       ->add(ProjectUpdatePermissionMiddleware::class)
       ->add(ProjectFetchMiddleware::class)
       ->add(AuthMiddleware::class);
