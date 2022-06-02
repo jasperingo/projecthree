@@ -1,71 +1,42 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-	
-	<meta charset="UTF-8">
-	
-	<title>Search <?=$strings['website_title_note'];?></title>
-	
-	<link rel="stylesheet"  type="text/css" href="res/css/main.css">
-	<link rel="stylesheet" type="text/css" href="res/css/project.css">
-	<link rel="stylesheet" type="text/css" href="res/css/searchpage.css?7">
-	
-	<meta name="viewport"  content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="res/icons/favicon.png" type="image/png">
-	
-</head>
-
-
-<body>
-	
-	<?php include_once'res/php/header.php'; ?>
-	
-	
+<div class="container">
 	<section id="main-section">
 		
-		<form id="search-page-form" method="GET" action="search.php">
-			<input type="text" id="search-page-input" name="q" value="<?=isset($_GET['q'])?$_GET['q']:"";?>"  /><button type="submit" id="search-page-btn">
-				<?=$icons['search'];?>
+		<form id="search-page-form" method="GET" action="">
+			<input 
+				name="q" 
+				type="text"
+				value="<?= $_GET['q'] ?? '' ?>"
+				placeholder="<?= $__('search_project3') ?>" 
+			/>
+			<button type="submit">
+				<?= $icons['search'] ?>
 			</button>
 		</form>
 		
 		<?php if (!isset($_GET['q'])) : ?>
 		
-		<?=get_no_data_box($strings['search_project3']); ?>
+			<div class="no-data-box"><?= $__('search_project3') ?></div>
 		
 		<?php else : ?>
 		
-		<div id="result-count"><?=$projects_count." ".$strings['results_found'];?></div>
-		
-		<?php foreach ($projects AS $pj) : ?>
-		<?php include'res/php/project.php'; ?>
-		<?php endforeach; ?>
-		
-		<?php if (empty($projects)) : ?>
-		<?=get_no_data_box($strings['no_result_found']); ?>
-		<?php endif; ?>
-		
-		<?php echo getPagesBox("page", ceil($projects_count/PAGE_LIMIT), "search.php?q=".$_GET['q']."&page=", null, "", array(
-			"next"=> $icons['next'],
-			"previous"=> $icons['previous'],
-		)); ?>
+			<ul class="main-list-no-margin">
+				<?php foreach ($projects as $project) : ?>
+					<li class="main-item">
+						<a href="/projects/<?= $project->id ?>">
+							<?= $icons['project'] ?>
+							<div>
+								<div class="main-item-head"><?= $project->topic ?></div>
+							</div>
+						</a>
+					</li>
+				<?php endforeach ?>
+			</ul>
+
+			<?php if (empty($projects)) : ?>
+				<div class="no-data-box"><?= $__('no_result_found') ?></div>
+			<?php endif ?>
 		
 		<?php endif; ?>
 		
 	</section>
-	
-	
-	<?php include_once'res/php/footer.php'; ?>
-	
-	
-</body>
-
-
-</html>
-
-
-
-
-
-
+</div>

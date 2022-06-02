@@ -21,16 +21,20 @@
 
 		<ul class="main-list-no-margin">
 			<?php foreach ($projects as $project) : ?>
-			<li class="main-item">
-				<a href="/projects/<?= $project->id ?>">
-					<?= $icons['project'] ?>
-					<div>
-						<div class="main-item-head"><?= $project->topic ?></div>
-					</div>
-				</a>
-			</li>
+				<li class="main-item">
+					<a href="/projects/<?= $project->id ?>">
+						<?= $icons['project'] ?>
+						<div>
+							<div class="main-item-head"><?= $project->topic ?></div>
+						</div>
+					</a>
+				</li>
 			<?php endforeach ?>
 		</ul>
+
+		<?php if (empty($projects)) : ?>
+			<div class="no-data-box"><?= $__('no_project') ?></div>
+		<?php endif ?>
 		
 	</section>
 

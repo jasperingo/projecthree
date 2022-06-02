@@ -103,6 +103,10 @@ main {
 	font-size: var(--dimen-xl);
 }
 
+#main-header h1.small {
+	flex-grow: 1;
+}
+
 #main-header h1 > a {
 	color: var(--color-primary);
 }
@@ -129,9 +133,10 @@ main {
 	background-color: var(--color-surface);
 }
 
-#header-menu svg,
 .header-btn svg,
-#main-header form svg {
+#header-menu svg,
+#main-header form svg,
+#search-page-form button svg {
 	width: var(--dimen-lg);
 	height: var(--dimen-lg);
 	fill: var(--color-primary);
@@ -186,6 +191,39 @@ main {
 }
 
 #main-header form button {
+	height: 2.5em;
+	border: none;
+	border-radius: 0;
+	text-align: center;
+	padding-left: var(--dimen-md);
+	padding-right: var(--dimen-md);
+	background-color: var(--color-surface);
+	border-top-right-radius: var(--dimen-sm);
+	border-bottom-right-radius: var(--dimen-sm);
+}
+
+
+#search-page-form {
+	display: flex;
+	text-align: center;
+	margin: var(--dimen-sm) auto;
+	border-radius: var(--dimen-sm);
+	border: 1px solid var(--color-primary);
+	background-color: var(--color-surface);
+}
+
+#search-page-form input {
+	border: none;
+	flex-grow: 1;
+	height: 2.5em;
+	border-radius: 0;
+	background-color:#FFFFFF;
+	padding: var(--dimen-xxs) var(--dimen-xs);
+	border-top-left-radius: var(--dimen-sm);
+	border-bottom-left-radius: var(--dimen-sm);
+}
+
+#search-page-form button {
 	height: 2.5em;
 	border: none;
 	border-radius: 0;
@@ -413,69 +451,6 @@ div.input-box {
 
 /*=== Input styles ends ===*/
 
-.pagination-box {
-	text-align:center;
-	margin:1.25em auto;
-}
-
-.pagination-box > a, 
-.pagination-box > span {
-	color:#FFFFFF;
-	font-weight:bold;
-	text-align:center;
-	display:inline-block;
-	vertical-align:middle;
-	padding:0.625em 0.8125em;
-	background-color:#DC143C;
-}
-
-.pagination-box > a > svg, 
-.pagination-box > span > svg {
-	width:12px;
-	height:12px;
-	display:inline-block;
-}
-
-.pagination-box > a.active {
-	color:#DC143C;
-	background-color:#FFFFFF;
-}
-
-.pagination-box > a:active,
-.pagination-box > a.active:active {
-	background-color:#DCDCDC;
-}
-
-.pagination-box > span {
-	background-color:#808080;
-}
-
-#entity-nav {
-	width:100%;
-	overflow-x:auto;
-	text-align:center;
-	white-space:nowrap;
-	margin-bottom:10px;
-}
-
-#entity-nav > a {
-	color:#000000;
-	padding:15px 8px;
-	font-weight:bold;
-	display:inline-block;
-	background-color:#FFFFFF;
-	border-top:1px solid #DCDCDC;
-	border-bottom:1px solid #DCDCDC;
-}
-
-#entity-nav > a.active {
-	border-bottom:2px solid #DC143C;
-}
-
-#entity-nav > a:active {
-	background-color:#DCDCDC;
-}
-
 #logout-section {
 	width: 80%;
 	font-size: larger;
@@ -664,16 +639,15 @@ div.input-box {
 
 
 .no-data-box {
-	width:90%;
-	clear:both;
-	display:block;
-	color:#DC134C;
-	margin:10px auto;
-	padding:50px 5px;
-	text-align:center;
-	border-radius:5px;
-	font-size:x-large;
-	background-color:#FFC0CB;
+	clear: both;
+	display: block;
+	text-align: center;
+	font-size: x-large;
+	background-color: #FFC0CB;
+	color: var(--color-primary);
+	margin: var(--dimen-sm) auto;
+	padding: 50px var(--dimen-xs);
+	border-radius: var(--dimen-sm);
 }
 
 .hide, 
@@ -715,7 +689,8 @@ form.hide {
 		border: 1px solid var(--color-background);
 	}
 
-	.main-list {
+	.main-list,
+	.main-list-no-margin {
 		display: flex;
 		flex-wrap: wrap;
 		column-gap: var(--dimen-sm);

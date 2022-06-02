@@ -10,8 +10,8 @@
 				<input 
 					name="q" 
 					type="text" 
-					placeholder="<?= $__('search_project3') ?>" 
 					value="<?= $_GET['q'] ?? '' ?>" 
+					placeholder="<?= $__('search_project3') ?>" 
 				/>
 
 				<button type="submit" class="search-btn">

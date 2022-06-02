@@ -9,12 +9,10 @@ use Slim\Handlers\ErrorHandler as SlimErrorHandler;
 class ErrorHandler extends SlimErrorHandler
 {
 
-  private PhpRenderer $viewRenderer;
-
-  public function __construct(App $app, PhpRenderer $viewRenderer)
+  public function __construct(private PhpRenderer $viewRenderer, App $app)
   {
     parent::__construct($app->getCallableResolver(), $app->getResponseFactory());
-    $this->viewRenderer = $viewRenderer;
+    $this->viewRenderer->setLayout('layout.php');
   }
 
   protected function respond(): ResponseInterface
@@ -22,8 +20,9 @@ class ErrorHandler extends SlimErrorHandler
       $response = $this->responseFactory->createResponse();
 
       return $this->viewRenderer->render($response, 'error.php', [
-        'title' => $this->statusCode,
+        'title' => "{$this->statusCode} Error",
         'code' => $this->statusCode,
+        'smallHeader' => $this->statusCode,
         'message' => $this->exception->getMessage(),
         'stack' => $this->exception->getTrace()
       ]);

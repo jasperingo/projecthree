@@ -1,8 +1,9 @@
 
-#main-section {
+.error-page {
 	width: 80%;
 	font-size: larger;
 	text-align: center;
+	font-weight: bold;
 	color: var(--color-primary);
 	margin: var(--dimen-huge) auto;
 	border-radius: var(--dimen-xs);
@@ -11,13 +12,13 @@
 }
 
 @media only screen and (min-width:600px) {
-	#main-section {
+	.error-page {
 		width:70%;
 	}
 }
 
 @media only screen and (min-width:768px) {
-	#main-section {
+	.error-page {
 		width: 30em;
 	}
 }

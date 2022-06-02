@@ -1,5 +1,4 @@
 
-
 .about-box {
 	width:90%;
 	padding:10px;
@@ -15,7 +14,6 @@
 	padding-bottom:5px;
 	border-bottom:2px solid #00BFFF;
 }
-
 
 
 .FAQ-header {
@@ -80,7 +78,6 @@
 }
 
 
-
 @media only screen and (min-width:600px) {
 
 	.about-box {
@@ -95,24 +92,10 @@
 		width:80%;	
 	}
 
-
-
-
 }
 
 
-
 @media only screen and (min-width:768px) {
-
-
-	#main-header {
-		position:static;
-	}
-
-	#main-header > div {
-		width:100%;
-		text-align:center;
-	}
 
 	.about-box {
 		width:70%;
@@ -125,9 +108,6 @@
 	.FAQ-box {
 		width:70%;	
 	}
-
-
-
 }
 
 
@@ -145,14 +125,11 @@
 	.FAQ-box {
 		width:60%;	
 	}
-	
-
 }
 
 
 @media only screen and (min-width:1200px) {
 
-	
 	.about-box {
 		width:50%;
 	}
@@ -164,16 +141,4 @@
 	.FAQ-box {
 		width:50%;	
 	}
-
 }
-
-
-
-
-
-
-
-
-
-
-

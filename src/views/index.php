@@ -2,85 +2,61 @@
 	
 	<section id="index-welcome">
 	
-		<div id="index-welcome-note">School projects at it's best</div>
+		<div id="index-welcome-note">School Projects at your finger tips</div>
 
 		<div id="index-welcome-small-note">
-			Manage school projects efficiently with Project3. 
-			Join us today and make your project the best.
+			Upload and download school project documents from different department and students worldwide.
 		</div>
 
 		<a id="index-welcome-link" href="users/create" ><?= $__('join_us'); ?></a>
 
 	</section>
 
-	
-	<section id="index-features">
-		
-		<div class="index-feature">
-			<?= $icons['project_index'] ?>
-			<div>Easily create, manage and share projects</div>
-		</div>
-		
-		<div class="index-feature">
-			<?= $icons['messages_index'] ?>
-			<div>Communicate with projects' supervisors and students</div>
-		</div>
-		
-		<div class="index-feature">
-			<?= $icons['documents_index'] ?>
-			<div>Send, preview and approve project documents</div>
-		</div>
-		
-		<div class="index-feature">
-			<?= $icons['web_index'] ?>
-			<div>Browse through a wide library of projects</div>
-		</div>
-		
+	<section>
+
+		<h4 class="heading-4 "><?= $__('Recent_projects') ?></h4>
+
+		<ul class="main-list-no-margin">
+			<?php foreach ($projects as $project) : ?>
+				<li class="main-item">
+					<a href="/projects/<?= $project->id ?>">
+						<?= $icons['user'] ?>
+						<div>
+							<div class="main-item-head"><?= $project->topic ?></div>
+						</div>
+					</a>
+				</li>
+			<?php endforeach ?>
+		</ul>
+
+		<?php if (empty($projects)) : ?>
+			<div class="no-data-box"><?= $__('no_project') ?></div>
+		<?php endif ?>
+
 	</section>
-	
-	
-	<?php /* if (!empty($projects)) : ?>
-	<div id="index-projects">
+
+	<section>
+
+		<h4 class="heading-4 "><?= $__('Departments') ?></h4>
+
+		<ul class="main-list-no-margin">
+			<?php foreach ($departments as $department) : ?>
+				<li class="main-item">
+					<a href="/departments/<?= $department->id ?>">
+						<?= $icons['department'] ?>
+						<div>
+							<div class="main-item-head"><?= $department->name ?></div>
+							<div><?= $department->acronym ?></div>
+						</div>
+					</a>
+				</li>
+			<?php endforeach ?>
+		</ul>
 		
-		<div id="index-projects-head"><?=$strings['top_projects'];?></div>
-		
-		<?php foreach ($projects AS $pj) : ?>
-		<?php include'res/php/project.php'; ?>
-		<?php endforeach; ?>
-		
-	</div>
-	<?php endif; ?>
-	
-	
-	<?php if (!empty($unies)) : ?>
-	<div id="index-universities">
-		
-		<div id="index-universities-head"><?=$strings['universities_on_project3'];?></div>
-		
-		<?php foreach ($unies AS $uni) : ?>
-		<?php include'res/php/university.php'; ?>
-		<?php endforeach; ?>
-		
-		<a href="universities.php" id="index-universities-link"><?=$strings['view_all'];?></a>
-		
-	</div>
-	<?php endif;*/ ?>
-	
-	
-	<section id="index-abouts">
-		
-		<div class="index-about">
-			<div class="index-about-head">About us</div>
-			<div class="index-about-body">We are here to provide students and supervisors with the necessary tools for carrying out school projects.</div>
-		</div>
-		
-		<div class="index-about">
-			<div class="index-about-head">Our mission</div>
-			<div class="index-about-body">To make school projects durable, accessable and efficient.</div>
-		</div>
-		
-		<a href="users/create" id="index-abouts-link"><?= $__('register') ?></a>
-		
+		<?php if (empty($departments)) : ?>
+			<div class="no-data-box"><?= $__('no_department') ?></div>
+		<?php endif ?>
+
 	</section>
 	
 </div>

@@ -22,7 +22,7 @@
 	<section id="main-section">
 
 		<div>
-			<h4 class="heading-4 ">Department</h4>
+			<h4 class="heading-4 "><?= $__('Department') ?></h4>
 			<div class="main-item">
 				<a href="/departments/<?= $data->department->id ?>">
 					<?= $icons['department'] ?>
@@ -35,17 +35,17 @@
 		</div>
 
 		<div>
-			<h4 class="heading-4 ">Collaborators</h4>
+			<h4 class="heading-4 "><?= $__('Collaborators') ?></h4>
 			<ul class="main-list-no-margin">
 				<?php foreach ($data->collaborators as $collaborator) : ?>
-				<li class="main-item">
-					<a href="/users/<?= $collaborator->user->id ?>">
-						<?= $icons['user'] ?>
-						<div>
-							<div class="main-item-head"><?= $collaborator->user->getFullName() ?></div>
-						</div>
-					</a>
-				</li>
+					<li class="main-item">
+						<a href="/users/<?= $collaborator->user->id ?>">
+							<?= $icons['user'] ?>
+							<div>
+								<div class="main-item-head"><?= $collaborator->user->getFullName() ?></div>
+							</div>
+						</a>
+					</li>
 				<?php endforeach ?>
 			</ul>
 		</div>

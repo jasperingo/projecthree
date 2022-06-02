@@ -13,5 +13,6 @@ class IndexRoute {
     $route->get('/about', [IndexController::class, 'about']);
     $route->get('/faq', [IndexController::class, 'faq']);
     $route->get('/terms', [IndexController::class, 'terms']);
+    $route->get('/search', [IndexController::class, 'search']);
   }
 }
